@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>贝叶斯滤波 | 无风之地</title><meta name="author" content="落"><meta name="copyright" content="落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="贝叶斯滤波器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贝叶斯滤波">
+<meta property="og:url" content="https://luo25177.github.io/2024/03/19/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/index.html">
+<meta property="og:site_name" content="无风之地">
+<meta property="og:description" content="贝叶斯滤波器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151436043.png">
+<meta property="article:published_time" content="2024-03-18T16:09:46.000Z">
+<meta property="article:modified_time" content="2024-05-13T07:54:21.771Z">
+<meta property="article:author" content="落">
+<meta property="article:tag" content="滤波">
+<meta property="article:tag" content="Bayesian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151436043.png"><link rel="shortcut icon" href="/Blog_ButterFly/img/favicon.png"><link rel="canonical" href="https://luo25177.github.io/2024/03/19/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Blog_ButterFly/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/Blog_ButterFly/',
+  algolia: undefined,
+  localSearch: {"path":"/Blog_ButterFly/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '贝叶斯滤波',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-13 15:54:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/Blog_ButterFly/css/page_title.css"><link rel="stylesheet" href="/Blog_ButterFly/css/gongshidisplay.css"><link rel="stylesheet" href="/Blog_ButterFly/css/Navigation_style.css"><link rel="stylesheet" href="/Blog_ButterFly/css/fonts.css"><link rel="stylesheet" href="/Blog_ButterFly/css/mouse.css"><link rel="stylesheet" href="/Blog_ButterFly/css/forbiden.css"><link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" ><link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" ><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body>
+<div id='loader'>
+    
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+        <div class="configure-border-1">
+            <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+            <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+    </div>
+    
+</div>
+    
+<script>
+    var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+    }
+    window.addEventListener('load',endLoading);
+</script>
+
+
+<div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog_ButterFly/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">71</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151436043.png')"><nav id="nav"><span id="blog-info"><a href="/Blog_ButterFly/" title="无风之地"><span class="site-name">无风之地</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">贝叶斯滤波</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-18T16:09:46.000Z" title="发表于 2024-03-19 00:09:46">2024-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-13T07:54:21.771Z" title="更新于 2024-05-13 15:54:21">2024-05-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Blog_ButterFly/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/">控制理论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="贝叶斯滤波"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151436043.png)"></div><article class="post-content" id="article-container"><p>在时移系统中通过对带有噪声的观测来估计隐状态的处理方法，滤波专门是指利用前面 k 个观测 $y_1,y_2,…,y_k$ 来估计第 k 个隐状态 $x_k$ 的方法，记作 $x_k|y_{1:k}$</p>
+<p>如果利用前 d 个观测 (d&lt;k) 来估计第 k 个状态，称为预报</p>
+<p>如果利用前 d 个观测 (d&gt;k) 来估计第 k 个状态。则称为平滑或内插</p>
+<p>所以实际的滤波是 $d=k$ 的情形，本质上就是观测 $y_k$ 已知并且带有噪声，用它来估计未知隐状态 $x_k$</p>
+<p><img src="/Blog_ButterFly/2024/03/19/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/20200221165922555.jpg" alt="20200221165922555.jpg"></p>
+<h3 id="状态空间模型"><a href="#状态空间模型" class="headerlink" title="状态空间模型"></a>状态空间模型</h3><p>对于一个可观测的系统，可以得到</p>
+<script type="math/tex; mode=display">
+x_k=Ax_{k-1}+Bu_k+Gw_k\\y_k=Cx_k+v_k</script><p>其中 $w_k,v_k$ 分别是过程噪声和观测噪声，并且上式为状态空间方程的状态方程，下式为测量方程</p>
+<h3 id="模型假设"><a href="#模型假设" class="headerlink" title="模型假设"></a>模型假设</h3><p>由于跟踪设备获得的量测信息和我们根据控制信息得到的预测信息都不是完全准确的（否则也就没有进行估计的必要了），但其一定在真值附近的一定范围内，因此我们可以假设这两个信息服从一定的概率分布来表征二者在真值附近的不确定性。考虑的是随机动态系统，自然要用概率来刻画，所以需要一个概率状态空间模型，设定如下</p>
+<ul>
+<li>$x_k$： k 时刻的状态</li>
+<li>$y_k$： k 时刻的观测</li>
+<li>$p(x_k|x_{k-1})$：动态模型/状态转移概率</li>
+<li>$p(x_k|x_{k})$： 观测模型</li>
+</ul>
+<p>对于这个系统，假设如下</p>
+<ul>
+<li>一阶马尔可夫性： $p(x_k|x_{1:k-1},y_{1:k-1})=p(x_k|x_{k-1})$</li>
+<li>一阶马尔可夫性： $p(x_{k-1}|x_{k:T},y_{k:T})=p(x_{k-1}|x_{k})$</li>
+<li>条件独立性： $p(y_k|x_{1:k},y_{1:k})=p(y_k|x_k)$</li>
+</ul>
+<p>在 k 时刻的预测信息和量测信息的本质是一个条件概率模型</p>
+<script type="math/tex; mode=display">
+x_k\sim p(x_k|x_{0:k-1},y_{1:k-1})\\y_k\sim p(y_k|x_{0:k},y_{1:k-1})</script><p>上式为更为一般的估计模型，还要进行一定的简化。最优状态的估计的过程，实际上是根据一系列已知的观测量来估计出未知的系统状态的过程，就是概率反演过程，这种状态量隐含且按照时序排列的模型为<strong>隐马尔可夫模型（HMM）</strong></p>
+<p><img src="/Blog_ButterFly/2024/03/19/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/20200221153252139.png" alt="20200221153252139.png"></p>
+<p>上述的模型有两个重要性质：</p>
+<ul>
+<li><p>马尔科夫性</p>
+<p>  在上述模型中，状态 $x_k$ 在给定前一时刻状态 $x_{k-1}$ 的条件下和 k-1 之前任意观测数据和状态均无关，同时和之后的状态以及测量也无关</p>
+</li>
+<li><p>观测量具有条件独立性</p>
+<p>  在给定当前状态 $x_k$ 的条件下，当前观测量 $y_k$ 和所有历史状态及观测量无关</p>
+</li>
+</ul>
+<p>利用这两个性质，上式可以化简为</p>
+<script type="math/tex; mode=display">
+x_k\sim p(x_k|x_{k-1})\\y_k\sim p(y_k|x_k)</script><p>得到了和之前空间状态模型基本一致，但是使用条件概率表示的模型，该模型称为<strong>概率状态空间模型</strong></p>
+<h3 id="贝叶斯估计方法"><a href="#贝叶斯估计方法" class="headerlink" title="贝叶斯估计方法"></a>贝叶斯估计方法</h3><p>在建立了概率状态空间模型之后，可以得到全状态 $X=\{x_0,…,x_k\}$ 的联合先验分布 $p(x_{0:k})$ 和所有观测量的似然 $p(y_{0:k}|x_{0:k})$ 为</p>
+<script type="math/tex; mode=display">
+x_k\sim p(x_k|x_{k-1})\\y_k\sim p(y_k|x_k)</script><p>因此对于 $0\sim k$ 时刻的所有状态量和观测量，根据贝叶斯法可以获得全状态的后验分布</p>
+<script type="math/tex; mode=display">
+p(x_{0:k}|y_{1:k})=\frac{p(y_{1:k}|x_{0:k})p(x_{0:k})}{p(y_{1:k})}\propto p(y_{1:k}|x_{0:k})p(x_{0:k})</script><p>对于全状态 $x_{0:k}$ 来说，使得上述后验分布最大的值即为其最优估计</p>
+<h3 id="贝叶斯方程与推导"><a href="#贝叶斯方程与推导" class="headerlink" title="贝叶斯方程与推导"></a>贝叶斯方程与推导</h3><p><strong>公式</strong></p>
+<script type="math/tex; mode=display">
+initial:p(x_0)\\prediction:p(x_k|y_{1:k-1})=\int{p(x_k|x_{k-1})p(x_{k-1}|y_{1:k-1})dx_{k-1}}\\update:p(x_k|y_{1:k})=\frac{1}{z_k}{p(x_k|x_{k})p(x_{k}|y_{1:k-1})}\\z_k=\int{p(y_k|x_k)p(x_k|y_{1:k-1})dx_k}</script><p><strong>推导</strong></p>
+<ul>
+<li><p><strong>prediction</strong></p>
+<p>  要求边缘分布，要先求联合分布，写出联合密度，根据条件概率展开即可，根据一阶马尔可夫性</p>
+<script type="math/tex; mode=display">
+  p(x_k,x_{k-1}|y_{1:k-1})=\frac{p(x_k,x_{k-1},y_{1:k-1})}{p(y_{1:k-1})}\\=\frac{p(x_k|x_{k-1},y_{1:k-1})p(x_{k-1},y_{1:k-1})}{p(y_{1:k-1})}\\=\frac{p(x_k|x_{k-1},y_{1:k-1})p(x_{k-1}|y_{1:k-1})p(y_{1:k-1})}{p(y_{1:k-1})}\\=p(x_k|x_{k-1},y_{1:k-1})p(x_{k-1}|y_{1:k-1})\\=p(x_k|x_{k-1})p(x_{k-1}|y_{1:k-1})</script><p>  再对 $x_{k-1}$ 积分，可得边缘条件概率，先验概率密度</p>
+<script type="math/tex; mode=display">
+  p(x_k|y_{1:k-1})=\int{p(x_k|x_{k-1})p(x_{k-1}|y_{1:k-1})dx_{k-1}}</script><p>  该式子表征了贝叶斯滤波中的一步预测过程，而其离散形式是 Markov 链中经典的 <strong>CK方程</strong></p>
+</li>
+<li><p><strong>update</strong></p>
+<p>  完成对于状态的一步预测之后，此时获取了 k 时刻的观测信息，那就很容易利用贝叶斯法则从已知分布 $p(x_k|y_{1:k-1})$ 和 $p(y_k|x_k)$ 求解条件分布 $p(x_k|y_{1:k})$</p>
+<script type="math/tex; mode=display">
+  p(x_k|y_{1:k})=\frac{p(x_k,y_{1:k})}{p(y_{1:k})}</script><p>  分子所表示的联合概率分布，根据概率链式法则</p>
+<script type="math/tex; mode=display">
+  p(x_k,y_{1:k})=p(y_k|x_k,y_{1:k-1})p(x_k,y_{1:k-1})\\=p(y_k|x_k,y_{1:k-1})p(x_k|y_{1:k-1})p(y_{1:k-1})\\=p(y_k|x_k)p(x_k|y_{1:k-1})p(y_{1:k-1})</script><p>  其中化简中利用了量测独立性 $p(y_k|x_k,y_{1:k-1})=p(y_k|x_k)$。而对于分母来说，没有任何直接信息，但是可以通过对上式所表示的联合分布积分的方式来获取对应的边缘分布</p>
+<script type="math/tex; mode=display">
+  p(y_{1:k})=\int{p(x_k,y_{1:k})dx_k}=p(y_{1:k-1})\int{p(y_k|x_k)p(x_k|y_{1:k-1})dx_k}</script><p>  将分子分母带入最开始的公式中得到后验概率密度</p>
+<script type="math/tex; mode=display">
+  p(x_k|y_{1:k})=\frac{p(x_k,y_{1:k})}{p(y_{1:k})}=\frac{p(y_k|x_k)p(x_k|y_{1:k-1})p(y_{1:k-1})}{p(y_{1:k-1})\int{p(y_k|x_k)p(x_k|y_{1:k-1})dx_k}}=\frac{p(y_k|x_k)p(x_k|y_{1:k-1}))}{\int{p(y_k|x_k)p(x_k|y_{1:k-1})dx_k}}</script></li>
+</ul>
+<p><strong>总结</strong></p>
+<ul>
+<li>目标：实现第 k-1 步滤波到第 k 步滤波，也就是 $p(x_{k-1}|y_{1:k-1})→p(x_k|y_{1:k})$</li>
+<li>初始化： $p(x_0)$</li>
+<li><p>预测步： $p(x_{k-1}|y_{1:k-1})→p(x_k|y_{1:k-1})$</p>
+<script type="math/tex; mode=display">
+  p(x_k|y_{1:k-1})=\int{p(x_k|x_{k-1})p(x_{k-1}|y_{1:k-1})dx_{k-1}}</script></li>
+<li><p>更新步： $p(x_k|y_{1:k-1})→p(x_k|y_{1:k})$，根据观测到得数据 $y_k$ 来更新数据</p>
+<script type="math/tex; mode=display">
+  p(x_k|y_{1:k})=\frac{1}{z_k}{p(x_k|x_{k})p(x_{k}|y_{1:k-1})dx_{k-1}}\\z_k=\int{p(y_k|x_k)p(x_k|y_{1:k-1})dx_k}</script></li>
+</ul>
+<p>这就是 <strong>贝叶斯滤波</strong>，贝叶斯每次估计都需要<strong>状态预测和观测更新</strong>两步，不断循环。这个框架下可以导出 KF 和三种非线性滤波</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://seashore.top/Blog_ButterFly/">落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://luo25177.github.io/2024/03/19/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/">https://luo25177.github.io/2024/03/19/贝叶斯滤波/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Luo25177.github.io" target="_blank">无风之地</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Blog_ButterFly/tags/%E6%BB%A4%E6%B3%A2/">滤波</a><a class="post-meta__tags" href="/Blog_ButterFly/tags/Bayesian/">Bayesian</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151436043.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Blog_ButterFly/2024/03/19/QP%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" title="QP二次规划"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151531931.jpg" onerror="onerror=null;src='/Blog_ButterFly/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">QP二次规划</div></div></a></div><div class="next-post pull-right"><a href="/Blog_ButterFly/2024/03/19/PR%E6%AF%94%E4%BE%8B%E8%B0%90%E6%8C%AF%E6%8E%A7%E5%88%B6%E5%99%A8/" title="PR比例谐振控制器"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151515460.jpg" onerror="onerror=null;src='/Blog_ButterFly/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">PR比例谐振控制器</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Blog_ButterFly/2024/03/19/PF%E7%B2%92%E5%AD%90%E6%BB%A4%E6%B3%A2%E5%99%A8/" title="PF粒子滤波器"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404301840955.PNG" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">PF粒子滤波器</div></div></a></div><div><a href="/Blog_ButterFly/2024/03/19/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2/" title="卡尔曼滤波"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151438619.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">卡尔曼滤波</div></div></a></div><div><a href="/Blog_ButterFly/2024/03/19/%E6%95%B0%E5%AD%97%E6%BB%A4%E6%B3%A2%E5%99%A8/" title="数字滤波器"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202406131527396.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">数字滤波器</div></div></a></div><div><a href="/Blog_ButterFly/2024/03/29/imu%E6%BB%A4%E6%B3%A2/" title="IMU滤波"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151419689.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-29</div><div class="title">IMU滤波</div></div></a></div><div><a href="/Blog_ButterFly/2024/06/13/IIR%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/" title="IIR滤波器设计"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202406131527396.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-13</div><div class="title">IIR滤波器设计</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Blog_ButterFly/img/avatar.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">落</div><div class="author-info__description">茶凉言尽，月上柳梢</div></div><div class="card-info-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">71</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Luo25177"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Luo25177" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:beloved25177@126.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">状态空间模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE"><span class="toc-number">2.</span> <span class="toc-text">模型假设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">贝叶斯估计方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%96%B9%E7%A8%8B%E4%B8%8E%E6%8E%A8%E5%AF%BC"><span class="toc-number">4.</span> <span class="toc-text">贝叶斯方程与推导</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/06/13/IIR%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/" title="IIR滤波器设计"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202406131527396.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="IIR滤波器设计"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/06/13/IIR%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/" title="IIR滤波器设计">IIR滤波器设计</a><time datetime="2024-06-13T02:40:20.000Z" title="发表于 2024-06-13 10:40:20">2024-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/06/04/C%E8%AF%AD%E8%A8%80%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" title="C语言可变参数的原理及实现"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151427643.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="C语言可变参数的原理及实现"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/06/04/C%E8%AF%AD%E8%A8%80%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" title="C语言可变参数的原理及实现">C语言可变参数的原理及实现</a><time datetime="2024-06-04T13:04:15.000Z" title="发表于 2024-06-04 21:04:15">2024-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/06/03/AT-T%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="AT&amp;T汇编基础语法"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202406031124514.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="AT&amp;T汇编基础语法"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/06/03/AT-T%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="AT&amp;T汇编基础语法">AT&amp;T汇编基础语法</a><time datetime="2024-06-03T03:11:53.000Z" title="发表于 2024-06-03 11:11:53">2024-06-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/05/30/bochs-gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E9%93%BE/" title="bochs+gdb调试工具链"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202406031123414.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="bochs+gdb调试工具链"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/05/30/bochs-gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E9%93%BE/" title="bochs+gdb调试工具链">bochs+gdb调试工具链</a><time datetime="2024-05-30T06:37:18.000Z" title="发表于 2024-05-30 14:37:18">2024-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/05/27/gcc%E5%86%85%E7%BD%AE%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/" title="gcc内置原子操作"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151529117.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="gcc内置原子操作"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/05/27/gcc%E5%86%85%E7%BD%AE%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/" title="gcc内置原子操作">gcc内置原子操作</a><time datetime="2024-05-27T12:34:52.000Z" title="发表于 2024-05-27 20:34:52">2024-05-27</time></div></div></div></div></div></div></main><footer id="footer" style="background: flase"><div id="footer-wrap"><div class="copyright">&copy;2024 By 落</div><div class="framework-info"><img src="https://gcore.jsdelivr.net/gh/CNhuazhu/TuChuang4/blog/备案图标.png">
+<a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备2024056598号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Blog_ButterFly/js/utils.js?v=4.13.0"></script><script src="/Blog_ButterFly/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/Blog_ButterFly/js/sakura.js"></script><script src="/Blog_ButterFly/js/buttom_show.js"></script><script src="/Blog_ButterFly/js/forbiden.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/Blog_ButterFly/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
