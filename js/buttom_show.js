@@ -1,9 +1,9 @@
 // 动态心跳
 $(document).ready(function(e) {
-  $('.copyright')
-      .html(
-          '©2024 - ' + mydate.getFullYear() +
-          ' <i class="fas fa-keyboard" style="color: #ffffff;"></i> By Luo');
+  // $('.copyright')
+  //     .html(
+  //         '©2024 - ' + mydate.getFullYear() +
+  //         ' <i class="fas fa-keyboard" style="color: #ffffff;"></i> By Luo');
   show_date_time();
 })
 
