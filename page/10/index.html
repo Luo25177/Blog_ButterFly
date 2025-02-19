@@ -53,7 +53,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-02-19 20:41:57'
+  postUpdate: '2025-02-19 21:13:57'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -180,75 +180,97 @@
 对于一个简单的倒立摆
 
 可以知道系统状态方程是
-Lϕ¨+gsinϕ=0L\ddot{\phi}+gsin\phi=0
-Lϕ¨​+gsinϕ=0
-设
-x1=ϕx2=ϕ˙x_1=\phi\\\\
-x_2=\dot{\phi}
-x1​=ϕx2​=ϕ˙​
-得到
-x˙1=x2x˙2=−gLsinx1\dot{x}_1=x_2\\\\
-\dot{x}_2=-\frac{g}{L}sinx_1
-x˙1​=x2​x˙2​=−Lg​sinx1​
-寻找李雅普诺夫函数，可以使用能量方程
-E=K动能+P势能=12mv2+mgh=12m(Lϕ˙)2+mgL(1−cosϕ)E=K动能+P势能\\\\
-=\frac{1}{2}mv^2+mgh=\frac{1}{2}m(L\dot{\phi})^2+mgL(1-cos\phi)
-E=K动能+P势能=21​mv2+mgh=21​m(Lϕ˙​)2+mgL(1−cosϕ)
-所以得到李雅普诺夫函数
-V(x)=12m(Lx2)2+mgL(1−cosx1)V(x)=\frac{1}{2}m(Lx_2)^2+mgL(1-cosx_1)
-V(x)=21​m(Lx2​)2+mg ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7/" title="系统的稳定性"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151515460.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统的稳定性"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7/" title="系统的稳定性">系统的稳定性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:39:15.000Z" title="发表于 2024-03-18 16:39:15">2024-03-18</time></span></div><div class="content">稳定性：系统在离开平衡点之后的动态反应随时间不增加
-函数的一些知识
-PD 正定
 
-V(x)=0 if and only if x=0V(x)=0\ if\ and\ only\ if\ x=0V(x)=0 if and only if x=0
-V(x)&gt;0 if and only if x≠0V(x)&gt;0\ if\ and\ only\ if\ x\neq 0V(x)&gt;0 if and only if x​=0
+L\ddot{\phi}+gsin\phi=0设
+
+x_1=\phi\\\\
+x_2=\dot{\phi}得到
+
+\dot{x}_1=x_2\\\\
+\dot{x}_2=-\frac{g}{L}sinx_1寻找李雅普诺夫函数，可以使用能量方程
+
+E=K动能+P势能\\\\
+=\frac{1}{2}mv^2+mgh=\frac{1}{2}m(L\dot{\phi})^2+mgL(1-cos\phi)所以得到李雅普诺夫函数
+
+V(x)=\frac{1}{2}m(Lx_2)^2+mgL(1-cosx_1)开始分析，看得出来
+
+V(0)=0并且，对于任意 $x_1,x_2$，可以得到
+
+V(x)>0是满足正定条件的
+求导得到
+
+\dot{V}=\triangledown V f(x)=\begin{bmatrix}\frac{\partial V}{\partial x_1}&\frac{\partial V}{\partial x_2}\end{bmatrix}\begin{bmatrix}f_1\\f_2\end{bmatrix}=\ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7/" title="系统的稳定性"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151515460.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统的稳定性"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7/" title="系统的稳定性">系统的稳定性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:39:15.000Z" title="发表于 2024-03-18 16:39:15">2024-03-18</time></span></div><div class="content">稳定性：系统在离开平衡点之后的动态反应随时间不增加
+函数的一些知识PD 正定
+
+$V(x)=0\ if\ and\ only\ if\ x=0$
+$V(x)&gt;0\ if\ and\ only\ if\ x\neq 0$
 
 PSD 半正定
 
-V(x)=0 if and only if x=0V(x)=0\ if\ and\ only\ if\ x=0V(x)=0 if and only if x=0
-V(x)≥0 if and only if x≠0V(x)\geq0\ if\ and\ only\ if\ x\neq 0V(x)≥0 if and only if x​=0
+$V(x)=0\ if\ and\ only\ if\ x=0$
+$V(x)\geq0\ if\ and\ only\ if\ x\neq 0$
 
 ND 负定
 
-V(x)=0 if and only if x=0V(x)=0\ if\ and\ only\ if\ x=0V(x)=0 if and only if x=0
-V(x)&lt;0 if ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E6%8E%A7%E6%80%A7/" title="系统的可控性"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151512002.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统的可控性"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E6%8E%A7%E6%80%A7/" title="系统的可控性">系统的可控性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:38:20.000Z" title="发表于 2024-03-18 16:38:20">2024-03-18</time></span></div><div class="content">对于一个系统状态方程
-X˙=AX+Bu\dot{X}=AX+Bu
-X˙=AX+Bu
-离散型与连续型是一样的
-Xk+1=AXk+BukX_{k+1}=AX_k+Bu_k
-Xk+1​=AXk​+Buk​
-X1=AX0+Bu0X2=AX1+Bu1=A2X0+ABu0+Bu1…Xn=AXn−1+Bun−1=AnX0+An−1Bu0+⋯+ABun−2+Bun−1X_{1}=AX_0+Bu_0\\\\
+$V(x)=0\ if\ and\ only\ if\ x=0$
+$V(x)&lt;0\ if\ and\ only\ if\ x\neq 0$
+
+NSD 半负定
+
+$V(x)=0\ if\ and\ only\ if\ x=0$
+$V(x)\leq0\ if\ and\ only\ if\ x\neq 0$
+
+平衡点
+对于一个函数满足
+
+\dot{x}=f(x)\\f(x=0)=0\\\downarrow\\\dot{x}_{x=0}=0那就说这个 $x=0$ 点是该函数的一个平衡点
+如果此时的函数 V 满足
+
+V:PD\\\dot{V}:NSD\\\downarrow\\x=0是稳 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E6%8E%A7%E6%80%A7/" title="系统的可控性"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151512002.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统的可控性"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E6%8E%A7%E6%80%A7/" title="系统的可控性">系统的可控性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:38:20.000Z" title="发表于 2024-03-18 16:38:20">2024-03-18</time></span></div><div class="content">对于一个系统状态方程
+
+\dot{X}=AX+Bu离散型与连续型是一样的
+
+X_{k+1}=AX_k+Bu_k
+X_{1}=AX_0+Bu_0\\\\
 X_2=AX_1+Bu_1=A^2X_0+ABu_0+Bu_1\\\\
 \dots\\\\
-X_n=AX_{n-1}+Bu_{n-1}=A^nX_0+A^{n-1}Bu_0+\dots+ABu_{n-2}+Bu_{n-1}
-X1​=AX0​+Bu0​X2​=AX1​+Bu1​=A2X0​+ABu0​+Bu1​…Xn​=AXn−1​+Bun−1​=AnX0​+An−1Bu0​+⋯+ABun−2​+Bun−1​
-转化为矩阵形式
-Xn=[BABAn−1BAn][un−1un−2…u0X0]X_n=\begin{bmatrix}B&amp;AB&amp;A^{n-1}B&amp;A^n\end{bmatri ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/Hamilton-Matrix-and-Equation/" title="Hamilton Matrix and Equation"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151504776.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Hamilton Matrix and Equation"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/Hamilton-Matrix-and-Equation/" title="Hamilton Matrix and Equation">Hamilton Matrix and Equation</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:35:40.000Z" title="发表于 2024-03-18 16:35:40">2024-03-18</time></span></div><div class="content">最优化问题求解中的汉密尔顿方程是最优控制方法解决动态优化问题的一阶必要条件
+X_n=AX_{n-1}+Bu_{n-1}=A^nX_0+A^{n-1}Bu_0+\dots+ABu_{n-2}+Bu_{n-1}转化为矩阵形式
+
+X_n=\begin{bmatrix}B&AB&A^{n-1}B&A^n\end{bmatrix}\begin{bmatrix}u_{n-1}\\u_{n-2}\\\dots\\u_0\\X_0\end{bmatrix}想要实现该方程中 $u$ 有解，需要保证系数矩阵行满秩，也就是可控，一般来说初始状态 $X_0=0$，所以上式可以写作
+
+X_n=\begin{bmatrix}B&AB&A^{n-1}B\end{bmatrix}\begin{bmatrix}u_{n-1}\\u_{n-2}\\\dots\\u_0\end{bmatrix}但是这里所说的系统可控并不能使系统从一点直接到另一点，只能沿着特 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/Hamilton-Matrix-and-Equation/" title="Hamilton Matrix and Equation"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151504776.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Hamilton Matrix and Equation"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/Hamilton-Matrix-and-Equation/" title="Hamilton Matrix and Equation">Hamilton Matrix and Equation</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:35:40.000Z" title="发表于 2024-03-18 16:35:40">2024-03-18</time></span></div><div class="content">最优化问题求解中的汉密尔顿方程是最优控制方法解决动态优化问题的一阶必要条件
 汉密尔顿方程（Hamilton Equation）
-理论推导
-首先看需要解决的问题
-max∫t0t1f(x,u)dtx˙=g(x,u)x(t0)=x0x(t1):freemax\int_{t_0}^{t_1}f(x,u)dt\\\\
+理论推导首先看需要解决的问题
+
+max\int_{t_0}^{t_1}f(x,u)dt\\\\
 \dot{x}=g(x,u)\\\\
 x(t_0)=x_0\\\\
-x(t_1):free
-max∫t0​t1​​f(x,u)dtx˙=g(x,u)x(t0​)=x0​x(t1​):free
-引入一个函数 λ(t)\lambda (t)λ(t) 表示一个定义在 t0≤t≤t1t_0\leq t\leq t_1t0​≤t≤t1​ 上的连续的可微函数，那么对于任何满足上述约束的 x(t),u(t)x(t),u(t)x(t),u(t) 有
-∫t0t1f(x,u)dt=∫t0t1[f(x,u)+λg(x,u)−λx˙]dt\int_{t_0}^{t_1}f(x,u)dt=\int_{t_0}^{t_1}[f(x,u)+\lambda g(x,u)-\lambda \dot{x}]dt
-∫t ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/Riccati%E6%96%B9%E7%A8%8B/" title="Riccati方程"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151457201.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Riccati方程"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/Riccati%E6%96%B9%E7%A8%8B/" title="Riccati方程">Riccati方程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:34:16.000Z" title="发表于 2024-03-18 16:34:16">2024-03-18</time></span></div><div class="content">前言
-第四讲：李群和李代数 - 知乎 (zhihu.com)
-辛矩阵
-数学中，辛矩阵是指存在一个 2n×2n2n\times 2n2n×2n 的矩阵 M，使之满足
-MTΩM=ΩM^T\Omega M=\Omega
-MTΩM=Ω
-其中 MTM^TMT 为 M 的转置矩阵，而辛矩阵 Ω\OmegaΩ 是一个固定的可逆斜对称矩阵，这类矩阵在适当的变化后皆能表为
-Ω=[0I−I0]\Omega=\begin{bmatrix}0&amp;I\\-I&amp;0\end{bmatrix}
-Ω=[0−I​I0​]
-或者
-Ω=[01−10...01−10]\Omega=\begin{bmatrix}0&amp;1\\-1&amp;0\\&amp;&amp;...\\&amp;&amp;&amp;0&amp;1\\&amp;&amp;&amp;-1&amp;0\\\end{bmatrix}
-Ω=⎣⎢⎢⎢⎢⎢⎡​0−1​10​...​0−1​10​⎦⎥⎥⎥⎥⎥⎤​
-两者的差异仅在于基的排列，其中 III 是 n×nn\times nn×n 的单位矩阵，此外 det⁡Ω=1\det\Omega=1detΩ= ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E5%92%8C%E8%BF%B9%E8%BF%90%E7%AE%97/" title="矩阵求导和迹运算"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151504776.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="矩阵求导和迹运算"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E5%92%8C%E8%BF%B9%E8%BF%90%E7%AE%97/" title="矩阵求导和迹运算">矩阵求导和迹运算</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:26:22.000Z" title="发表于 2024-03-18 16:26:22">2024-03-18</time></span></div><div class="content">求导
-对与矩阵 XXX, AAA, UUU, VVV
-dXTX=IdXXT=IdXTAX=AdAXXT=AdAXX=ATdXAX=ATdXTXX=2XdXTAXX=(A+AT)XdXTAXXXT=ddX(dXTAXdX)=AT+A∂U∂XT=(∂UT∂X)T∂UTV∂X=∂UT∂XV+∂VT∂XUT∂UVT∂X=∂U∂XVT+U∂VT∂X∂[(XU−V)T(XU−V)]∂X=2(XU−V)UT∂UTXV∂X=UVT∂UTXTXU∂X=2XUUT\frac{dX^T}{X}=I\\\\
+x(t_1):free引入一个函数 $\lambda (t)$ 表示一个定义在 $t_0\leq t\leq t_1$ 上的连续的可微函数，那么对于任何满足上述约束的 $x(t),u(t)$ 有
+
+\int_{t_0}^{t_1}f(x,u)dt=\int_{t_0}^{t_1}[f(x,u)+\lambda g(x,u)-\lambda \dot{x}]dt对上式最右侧右侧部分进行分部积分可以得到
+
+-\int_{t_0}^{t_1}\lambda \dot{x}dt=-\lambda(t_1)x(t_1)+\lambda (t_0)x(t_0)+\int_{t_0}^{t_1}x\dot{\lambda}dt将上式带回原来的方程
+
+\int_{t_0}^{t_1}f(x,u)dt=\int_{t ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/Riccati%E6%96%B9%E7%A8%8B/" title="Riccati方程"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151457201.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Riccati方程"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/Riccati%E6%96%B9%E7%A8%8B/" title="Riccati方程">Riccati方程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:34:16.000Z" title="发表于 2024-03-18 16:34:16">2024-03-18</time></span></div><div class="content">前言第四讲：李群和李代数 - 知乎 (zhihu.com)
+辛矩阵数学中，辛矩阵是指存在一个 $2n\times 2n$ 的矩阵 M，使之满足
+
+M^T\Omega M=\Omega其中 $M^T$ 为 M 的转置矩阵，而辛矩阵 $\Omega$ 是一个固定的可逆斜对称矩阵，这类矩阵在适当的变化后皆能表为
+
+\Omega=\begin{bmatrix}0&I\\-I&0\end{bmatrix}或者
+
+\Omega=\begin{bmatrix}0&1\\-1&0\\&&...\\&&&0&1\\&&&-1&0\\\end{bmatrix}两者的差异仅在于基的排列，其中 $I$ 是 $n\times n$ 的单位矩阵，此外 $\det\Omega=1$ 并且 $\Omega ^{-1}=-\Omega$
+性质
+
+$\Omega^T=-\Omega=\Omega^{-1}$
+$\Omega^T\Omega=\Omega\Omega^T=I$
+$\Omega\Omega=-I$
+$\det\Omega=1$
+
+代数Riccati方程黎卡提方程是最简单的一类非线性方程。例如
+
+y' = P( ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E5%92%8C%E8%BF%B9%E8%BF%90%E7%AE%97/" title="矩阵求导和迹运算"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151504776.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="矩阵求导和迹运算"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E5%92%8C%E8%BF%B9%E8%BF%90%E7%AE%97/" title="矩阵求导和迹运算">矩阵求导和迹运算</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:26:22.000Z" title="发表于 2024-03-18 16:26:22">2024-03-18</time></span></div><div class="content">求导对与矩阵 $X$, $A$, $U$, $V$
+
+\frac{dX^T}{X}=I\\\\
 \frac{dX}{X^T}=I\\\\
 \frac{dX^TA}{X}=A\\\\
 \frac{dAX}{X^T}=A\\\\
@@ -257,80 +279,51 @@ dXTX=IdXXT=IdXTAX=AdAXXT=AdAXX=ATdXAX=ATdXTXX=2XdXTAXX=(A+AT)XdXTAXXXT=ddX(dXTAX
 \frac{dX^TX}{X}=2X\\\\
 \frac{dX^TAX}{X}=(A+A^T)X\\\\
 \frac{dX^TAX}{XX^T}=\frac{d}{dX}(\frac{dX^TAX}{dX})=A^T+A\\\\
-\frac{\partial U}{\partial X^T} ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%A6%BB%E6%95%A3%E5%8C%96/" title="系统离散化"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151514224.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统离散化"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%A6%BB%E6%95%A3%E5%8C%96/" title="系统离散化">系统离散化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:25:10.000Z" title="发表于 2024-03-18 16:25:10">2024-03-18</time></span></div><div class="content">连续时间系统
-一般来说系统的状态变化都是连续的
-离散时间系统
-数字控制器，有时候计算时需要将系统的状态离散化，控制器是离散的输出。这就需要将离散系统和连续系统结合起来，需要用到一些模块。首先是通过ADC将传感器信号采样并转化为离散输出，同时其他的参数都将是离散的形式。随后控制器的输出将会通过DAC转化为连续的系统输出，控制量的输出需要使用到保持器来保证在一个控制周期之内的控制量保持不变。
+\frac{\partial U}{\partial X^T}=(\frac{\partial U^T}{\partial X})^T\\\\
+\frac{\partial U^TV}{\partial X}=\frac{\partial U^T}{\partial X}V+\frac{\partial V^T}{\partial X}U^T\\\\
+\frac{\partial UV^T}{\partial X}=\frac{\partial U}{ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%A6%BB%E6%95%A3%E5%8C%96/" title="系统离散化"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151514224.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统离散化"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E7%B3%BB%E7%BB%9F%E7%A6%BB%E6%95%A3%E5%8C%96/" title="系统离散化">系统离散化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:25:10.000Z" title="发表于 2024-03-18 16:25:10">2024-03-18</time></span></div><div class="content">连续时间系统一般来说系统的状态变化都是连续的
+离散时间系统数字控制器，有时候计算时需要将系统的状态离散化，控制器是离散的输出。这就需要将离散系统和连续系统结合起来，需要用到一些模块。首先是通过ADC将传感器信号采样并转化为离散输出，同时其他的参数都将是离散的形式。随后控制器的输出将会通过DAC转化为连续的系统输出，控制量的输出需要使用到保持器来保证在一个控制周期之内的控制量保持不变。
 对于采样，采样频率太快会使数据堆积，需要大量的存储数据，采样频率太小，小于控制周期，会产生误差，采样频率一般采用被采样数据频率的2倍甚至是5-10倍，如果在中断中采样并且处理数据的话，采样周期一定要大于处理所用的时间，否则这段期间内的采样就没有了意义。
 有时候会把连续系统近似为离散的系统之后设计算法来控制系统，连续系统与离散系统的转换
 采样周期的选取
+一般来说肯定是采样周期越小越好 $T→0 \Rightarrow y[k]\rightarrow y(t)$，需要存储大量数据，内存占用多
+$T\uparrow$ 会导致产生混叠，根据采样定理，采样频率至少为信号最高频率的2倍，一般选择5~10倍
 
-一般来说肯定是采样周期越小越好 T→0⇒y[k]→y(t)T→0 \Rightarrow y[k]\rightarrow y(t)T→0⇒y[k]→y(t)，需要存储大量数据，内存占用多
-T↑T\uparrowT↑ 会导致产生混叠，根据采样定理，采样频 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%92%8C%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%96%B9%E7%A8%8B/" title="传递函数和状态空间方程"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151525668.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="传递函数和状态空间方程"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%92%8C%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%96%B9%E7%A8%8B/" title="传递函数和状态空间方程">传递函数和状态空间方程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:16:30.000Z" title="发表于 2024-03-18 16:16:30">2024-03-18</time></span></div><div class="content">状态空间
-对于一个系统的状态空间方程，可以使用 laplace 变换来得到系统的运行状态方程
+对于实时 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%92%8C%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%96%B9%E7%A8%8B/" title="传递函数和状态空间方程"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151525668.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="传递函数和状态空间方程"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%92%8C%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%96%B9%E7%A8%8B/" title="传递函数和状态空间方程">传递函数和状态空间方程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:16:30.000Z" title="发表于 2024-03-18 16:16:30">2024-03-18</time></span></div><div class="content">状态空间对于一个系统的状态空间方程，可以使用 laplace 变换来得到系统的运行状态方程
 状态空间方程——一个包含输入，输出，状态变量的集合的一阶微分方程，但是对于高阶的系统，可以选择合适的状态量来消除高阶的系数
 根据下式求出的状态空间方程中，对于矩阵 A 的特征值是决定系统极点的位置，可能会决定系统的稳定性
-状态空间方程的解
-过程不再写了，直接结论
-X(t)=eA(t−t0)X(t0)+∫t0teA(t−τ)Bu(τ)dτX(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t{e^{A(t-\tau)}Bu(\tau)}d\tau
-X(t)=eA(t−t0​)X(t0​)+∫t0​t​eA(t−τ)Bu(τ)dτ
-其中 eA(t−t0)e^{A(t-t_0)}eA(t−t0​) 是状态转移矩阵，表示系统状态转移变化的规律，是一个实时变化的矩阵，A 矩阵对其有着重要的作用，当 A 的特征值小于0时， X(t)X(t)X(t) 是不断趋近于 0 的，是系统稳定性分析的一个重要方式，但是 A 矩阵的特征值中含有虚数就表示该系统是有震荡的（根据欧拉公式，引入虚数相当于是 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" title="深入理解计算机系统"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151522445.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="深入理解计算机系统"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" title="深入理解计算机系统">深入理解计算机系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:08:05.000Z" title="发表于 2024-03-18 16:08:05">2024-03-18</time></span></div><div class="content">快捷键
-窗口操作
-切换窗口：Alt+Tab
-窗口移动：Win+↑/↓/←/→
-文件操作
-保存：Ctrl+S
-关闭文件：Ctrl+W
-撤销：Ctrl+Z
-恢复：Ctrl+Shift+Z
-复制/粘贴：Ctrl+C/V
-向上/向下翻页：PageUp/PageDown
-切换到左/右边的文件：Ctrl+PageUp/PageDown
-选择操作
-全选：Ctrl+A
-选中：Shift+各种移动/跳转
-光标操作
-上/下/左/右移动光标：↑/↓/←/→
-向上/下插入光标：Ctrl+Alt+↑/↓
-在下一个匹配项处插入光标：Ctrl+D
-查找/替换匹配项：Ctrl+F/H
-全局查找/替换匹配项：Ctrl+Shift+F/H
-更改操作
-行删除：Shift+Delete
-行上/下交换：Alt+↑/↓
-跳转操作
-跳转到上/下个光标位置：Alt+←/→
-跳转到词首/尾：Ctrl+←/→
-跳转到行首/尾：Home/End
-跳转到列首/尾：Ctrl+Home/End
-跳转到行：Ctrl+G
-跳转到括号：Ctrl+Shift+
-跳到定义：F12
-查看定义：Alt+F12
-VSCode 其他操作
-向右拆分编辑器：Ctrl ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/" title="代码整洁之道"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151535571.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="代码整洁之道"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/" title="代码整洁之道">代码整洁之道</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:06:33.000Z" title="发表于 2024-03-18 16:06:33">2024-03-18</time></span></div><div class="content">时刻保持初心，保持代码整洁
-变量命名规则
+状态空间方程的解过程不再写了，直接结论
 
+X(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t{e^{A(t-\tau)}Bu(\tau)}d\tau其中 $e^{A(t-t_0)}$ 是状态转移矩阵，表示系统状态转移变化的规律，是一个实时变化的矩阵，A 矩阵对其有着重要的作用，当 A 的特征值小于0时， $X(t)$ 是不断趋近于 0 的，是系统稳定性分析的一个重要方式，但是 A 矩阵的特征值中含有虚数就表示该系统是有震荡的（根据欧拉公式，引入虚数相当于是引入了 sint 和 cost，实际上是引入了震荡），要保证系统稳定，一定要保证特征值的实部小于零
+
+第二项是一个卷积，表示输入与输出之间的动态变化的关系
+传递函数→状态空间方程一阶系统假设传递函数为
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Blog_ButterFly/2024/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" title="深入理解计算机系统"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151522445.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="深入理解计算机系统"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" title="深入理解计算机系统">深入理解计算机系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:08:05.000Z" title="发表于 2024-03-18 16:08:05">2024-03-18</time></span></div><div class="content">快捷键窗口操作切换窗口：Alt+Tab窗口移动：Win+↑/↓/←/→
+文件操作保存：Ctrl+S关闭文件：Ctrl+W撤销：Ctrl+Z恢复：Ctrl+Shift+Z复制/粘贴：Ctrl+C/V向上/向下翻页：PageUp/PageDown切换到左/右边的文件：Ctrl+PageUp/PageDown
+选择操作全选：Ctrl+A选中：Shift+各种移动/跳转
+光标操作上/下/左/右移动光标：↑/↓/←/→向上/下插入光标：Ctrl+Alt+↑/↓在下一个匹配项处插入光标：Ctrl+D查找/替换匹配项：Ctrl+F/H全局查找/替换匹配项：Ctrl+Shift+F/H
+更改操作行删除：Shift+Delete行上/下交换：Alt+↑/↓
+跳转操作跳转到上/下个光标位置：Alt+←/→跳转到词首/尾：Ctrl+←/→跳转到行首/尾：Home/End跳转到列首/尾：Ctrl+Home/End跳转到行：Ctrl+G跳转到括号：Ctrl+Shift+\跳到定义：F12查看定义：Alt+F12
+VSCode 其他操作向右拆分编辑器：Ctrl+\行注释：Ctrl+/命令面板：F1 或 ctrl+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Blog_ButterFly/2024/03/18/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/" title="代码整洁之道"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151535571.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="代码整洁之道"></a></div><div class="recent-post-info"><a class="article-title" href="/Blog_ButterFly/2024/03/18/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/" title="代码整洁之道">代码整洁之道</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-18T08:06:33.000Z" title="发表于 2024-03-18 16:06:33">2024-03-18</time></span></div><div class="content">时刻保持初心，保持代码整洁
+变量命名规则
 名副其实，见名知意
 避免误导
 做有意义的区分
 使用读的出来的名称
 使用可以搜索的名称
 避免使用编码
-
 成员前缀
 匈牙利语标记法
 
 
 避免思维映射
 类名
-
 类名和对象名应该是名词或名词短语
 类名不应当是动词
 
 
 方法名
-
 方法名应当是动词或动词短语
 
 
@@ -338,7 +331,6 @@ VSCode 其他操作
 每个概念对应一个词
 别用双关语
 使用解决方案领域的名称
-
 给这些事取个技术性的名称，通常是最靠谱的做法。
 
 
@@ -346,16 +338,14 @@ VSCode 其他操作
 添加有意义的语境，不要添加没用的语境
 
 函数的定义规则
-
 短小 函数的第一规则是要短小。第二条规则是还要更短小。
 只做一件事
 每个函数一个抽象层级
 switch语句
 使用描述性的名称
 函数参数
-
 最理想的参数数量是零（零参数函数），其次是一（单参数函数），再次是二（双参数函数），应尽量避免三（三参数函数）。有足够特殊的理由才能用三个以上参数（多参数函数）—所以无论如何也不要这么做。
-标识参数丑陋不堪。向函数传入布尔值简直就是骇人听闻的做法。这样做，方法签名立刻变得复杂起来，大声宣布本函数不止做一件事。如果标识为 true 将会这样做，标识为 fals ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/Blog_ButterFly/page/9/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/Blog_ButterFly/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Blog_ButterFly/page/9/#content-inner">9</a><span class="page-number current">10</span><a class="page-number" href="/Blog_ButterFly/page/11/#content-inner">11</a><a class="extend next" rel="next" href="/Blog_ButterFly/page/11/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Blog_ButterFly/img/avatar.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">落</div><div class="author-info__description">茶凉言尽，月上柳梢</div></div><div class="card-info-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">103</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">88</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Luo25177"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Luo25177" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:beloved25177@126.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Blog_ButterFly/2024/12/11/%E5%88%A9%E7%94%A8tensorflow-keras%E6%90%AD%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="利用tensorflow.keras搭建神经网络">利用tensorflow.keras搭建神经网络</a><time datetime="2024-12-10T16:00:00.000Z" title="发表于 2024-12-11 00:00:00">2024-12-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Blog_ButterFly/2024/11/04/Spline/" title="Spline">Spline</a><time datetime="2024-11-04T01:49:20.000Z" title="发表于 2024-11-04 09:49:20">2024-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/09/23/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEipopt%E5%92%8Ccasadi%E6%B1%82%E8%A7%A3%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" title="ubuntu上配置ipopt和casadi求解二次规划"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923005.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="ubuntu上配置ipopt和casadi求解二次规划"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/09/23/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEipopt%E5%92%8Ccasadi%E6%B1%82%E8%A7%A3%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" title="ubuntu上配置ipopt和casadi求解二次规划">ubuntu上配置ipopt和casadi求解二次规划</a><time datetime="2024-09-23T13:12:40.000Z" title="发表于 2024-09-23 21:12:40">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/09/23/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash/" title="Linux系统配置clash"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923003.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Linux系统配置clash"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/09/23/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash/" title="Linux系统配置clash">Linux系统配置clash</a><time datetime="2024-09-23T13:09:46.000Z" title="发表于 2024-09-23 21:09:46">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/09/05/clang-tidy%E9%85%8D%E7%BD%AE/" title="clang-tidy配置"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923004.webp" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="clang-tidy配置"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/09/05/clang-tidy%E9%85%8D%E7%BD%AE/" title="clang-tidy配置">clang-tidy配置</a><time datetime="2024-09-05T12:51:43.000Z" title="发表于 2024-09-05 20:51:43">2024-09-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+标识参数丑陋不堪。向函数传入布尔值简直就是骇人听闻的做法。这样做，方法签名立刻变得复杂起来，大声宣布本函数不止做一件事。如果标识为 true 将会这样做，标识为 false 则会那样做 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/Blog_ButterFly/page/9/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/Blog_ButterFly/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Blog_ButterFly/page/9/#content-inner">9</a><span class="page-number current">10</span><a class="page-number" href="/Blog_ButterFly/page/11/#content-inner">11</a><a class="extend next" rel="next" href="/Blog_ButterFly/page/11/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Blog_ButterFly/img/avatar.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">落</div><div class="author-info__description">茶凉言尽，月上柳梢</div></div><div class="card-info-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">103</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">88</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Luo25177"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Luo25177" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:beloved25177@126.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Blog_ButterFly/2024/12/11/%E5%88%A9%E7%94%A8tensorflow-keras%E6%90%AD%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="利用tensorflow.keras搭建神经网络">利用tensorflow.keras搭建神经网络</a><time datetime="2024-12-10T16:00:00.000Z" title="发表于 2024-12-11 00:00:00">2024-12-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Blog_ButterFly/2024/11/04/Spline/" title="Spline">Spline</a><time datetime="2024-11-04T01:49:20.000Z" title="发表于 2024-11-04 09:49:20">2024-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/09/23/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEipopt%E5%92%8Ccasadi%E6%B1%82%E8%A7%A3%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" title="ubuntu上配置ipopt和casadi求解二次规划"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923005.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="ubuntu上配置ipopt和casadi求解二次规划"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/09/23/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEipopt%E5%92%8Ccasadi%E6%B1%82%E8%A7%A3%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" title="ubuntu上配置ipopt和casadi求解二次规划">ubuntu上配置ipopt和casadi求解二次规划</a><time datetime="2024-09-23T13:12:40.000Z" title="发表于 2024-09-23 21:12:40">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/09/23/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash/" title="Linux系统配置clash"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923003.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Linux系统配置clash"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/09/23/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash/" title="Linux系统配置clash">Linux系统配置clash</a><time datetime="2024-09-23T13:09:46.000Z" title="发表于 2024-09-23 21:09:46">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2024/09/05/clang-tidy%E9%85%8D%E7%BD%AE/" title="clang-tidy配置"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923004.webp" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="clang-tidy配置"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2024/09/05/clang-tidy%E9%85%8D%E7%BD%AE/" title="clang-tidy配置">clang-tidy配置</a><time datetime="2024-09-05T12:51:43.000Z" title="发表于 2024-09-05 20:51:43">2024-09-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/Blog_ButterFly/categories/" title="查看更多">
@@ -363,7 +353,7 @@ switch语句
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/unity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">unity游戏开发</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E4%BF%A1%E5%8F%B7/"><span class="card-category-list-name">信号</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="card-category-list-name">单片机</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><span class="card-category-list-name">图像处理</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">小工具</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/"><span class="card-category-list-name">控制理论</span><span class="card-category-list-count">32</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Blog_ButterFly/categories/%E6%9B%B2%E7%BA%BF%E8%A7%84%E5%88%92/"><span class="card-category-list-name">曲线规划</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/Blog_ButterFly/tags/Particle/" style="font-size: 1.1em; color: #999">Particle</a> <a href="/Blog_ButterFly/tags/matlab/" style="font-size: 1.1em; color: #999">matlab</a> <a href="/Blog_ButterFly/tags/ipopt/" style="font-size: 1.1em; color: #999">ipopt</a> <a href="/Blog_ButterFly/tags/HighGain/" style="font-size: 1.1em; color: #999">HighGain</a> <a href="/Blog_ButterFly/tags/linux%E7%BE%8E%E5%8C%96/" style="font-size: 1.26em; color: #999fa8">linux美化</a> <a href="/Blog_ButterFly/tags/cmake/" style="font-size: 1.1em; color: #999">cmake</a> <a href="/Blog_ButterFly/tags/gdb/" style="font-size: 1.1em; color: #999">gdb</a> <a href="/Blog_ButterFly/tags/DOB/" style="font-size: 1.1em; color: #999">DOB</a> <a href="/Blog_ButterFly/tags/unity/" style="font-size: 1.1em; color: #999">unity</a> <a href="/Blog_ButterFly/tags/%E7%BA%BF%E6%80%A7%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 1.26em; color: #999fa8">线性控制器</a> <a href="/Blog_ButterFly/tags/ucosii/" style="font-size: 1.1em; color: #999">ucosii</a> <a href="/Blog_ButterFly/tags/%E5%AF%BC%E7%BA%B3%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">导纳控制</a> <a href="/Blog_ButterFly/tags/stm32f4/" style="font-size: 1.34em; color: #99a3b0">stm32f4</a> <a href="/Blog_ButterFly/tags/es6/" style="font-size: 1.1em; color: #999">es6</a> <a href="/Blog_ButterFly/tags/LMI/" style="font-size: 1.1em; color: #999">LMI</a> <a href="/Blog_ButterFly/tags/keras/" style="font-size: 1.1em; color: #999">keras</a> <a href="/Blog_ButterFly/tags/HighFrequency/" style="font-size: 1.1em; color: #999">HighFrequency</a> <a href="/Blog_ButterFly/tags/PID/" style="font-size: 1.1em; color: #999">PID</a> <a href="/Blog_ButterFly/tags/clang/" style="font-size: 1.18em; color: #999ca1">clang</a> <a href="/Blog_ButterFly/tags/%E7%B3%BB%E7%BB%9F%E7%A6%BB%E6%95%A3%E5%8C%96/" style="font-size: 1.1em; color: #999">系统离散化</a> <a href="/Blog_ButterFly/tags/Cpp/" style="font-size: 1.5em; color: #99a9bf">Cpp</a> <a href="/Blog_ButterFly/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 1.42em; color: #99a6b7">计算机</a> <a href="/Blog_ButterFly/tags/tensorflow/" style="font-size: 1.1em; color: #999">tensorflow</a> <a href="/Blog_ButterFly/tags/JavaScript/" style="font-size: 1.1em; color: #999">JavaScript</a> <a href="/Blog_ButterFly/tags/vim/" style="font-size: 1.1em; color: #999">vim</a> <a href="/Blog_ButterFly/tags/Linux/" style="font-size: 1.18em; color: #999ca1">Linux</a> <a href="/Blog_ButterFly/tags/Asm/" style="font-size: 1.1em; color: #999">Asm</a> <a href="/Blog_ButterFly/tags/VMC/" style="font-size: 1.1em; color: #999">VMC</a> <a href="/Blog_ButterFly/tags/%E6%8E%A7%E5%88%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 1.1em; color: #999">控制工程</a> <a href="/Blog_ButterFly/tags/ros2/" style="font-size: 1.1em; color: #999">ros2</a> <a href="/Blog_ButterFly/tags/%E6%95%B0%E7%90%86%E7%9F%A5%E8%AF%86/" style="font-size: 1.26em; color: #999fa8">数理知识</a> <a href="/Blog_ButterFly/tags/MPC/" style="font-size: 1.1em; color: #999">MPC</a> <a href="/Blog_ButterFly/tags/ros/" style="font-size: 1.1em; color: #999">ros</a> <a href="/Blog_ButterFly/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 1.1em; color: #999">神经网络</a> <a href="/Blog_ButterFly/tags/%E4%BC%A0%E6%84%9F/" style="font-size: 1.1em; color: #999">传感</a> <a href="/Blog_ButterFly/tags/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">最优控制</a> <a href="/Blog_ButterFly/tags/GTest/" style="font-size: 1.1em; color: #999">GTest</a> <a href="/Blog_ButterFly/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/Blog_ButterFly/tags/Hermite/" style="font-size: 1.1em; color: #999">Hermite</a> <a href="/Blog_ButterFly/tags/make/" style="font-size: 1.1em; color: #999">make</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">78</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">103</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">560.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-02-19T12:41:55.192Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: flase"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 落</div><div class="framework_runtime"><a></a></div><div class="framework-info"><img src="https://gcore.jsdelivr.net/gh/CNhuazhu/TuChuang4/blog/备案图标.png">
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/Blog_ButterFly/tags/VMC/" style="font-size: 1.1em; color: #999">VMC</a> <a href="/Blog_ButterFly/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a> <a href="/Blog_ButterFly/tags/clang-format/" style="font-size: 1.1em; color: #999">clang-format</a> <a href="/Blog_ButterFly/tags/Line/" style="font-size: 1.1em; color: #999">Line</a> <a href="/Blog_ButterFly/tags/tensorflow/" style="font-size: 1.1em; color: #999">tensorflow</a> <a href="/Blog_ButterFly/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/Blog_ButterFly/tags/Kalman/" style="font-size: 1.1em; color: #999">Kalman</a> <a href="/Blog_ButterFly/tags/Catmull-Rom/" style="font-size: 1.1em; color: #999">Catmull-Rom</a> <a href="/Blog_ButterFly/tags/PID/" style="font-size: 1.1em; color: #999">PID</a> <a href="/Blog_ButterFly/tags/%E7%B3%BB%E7%BB%9F%E5%8F%AF%E6%8E%A7%E6%80%A7/" style="font-size: 1.1em; color: #999">系统可控性</a> <a href="/Blog_ButterFly/tags/html5/" style="font-size: 1.1em; color: #999">html5</a> <a href="/Blog_ButterFly/tags/css3/" style="font-size: 1.1em; color: #999">css3</a> <a href="/Blog_ButterFly/tags/NexT/" style="font-size: 1.1em; color: #999">NexT</a> <a href="/Blog_ButterFly/tags/%E4%BF%A1%E5%8F%B7/" style="font-size: 1.1em; color: #999">信号</a> <a href="/Blog_ButterFly/tags/ButterFly/" style="font-size: 1.4em; color: #99a5b6">ButterFly</a> <a href="/Blog_ButterFly/tags/HighFrequency/" style="font-size: 1.1em; color: #999">HighFrequency</a> <a href="/Blog_ButterFly/tags/make/" style="font-size: 1.1em; color: #999">make</a> <a href="/Blog_ButterFly/tags/ros2/" style="font-size: 1.1em; color: #999">ros2</a> <a href="/Blog_ButterFly/tags/%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">二次规划</a> <a href="/Blog_ButterFly/tags/xv6/" style="font-size: 1.2em; color: #999da3">xv6</a> <a href="/Blog_ButterFly/tags/python/" style="font-size: 1.4em; color: #99a5b6">python</a> <a href="/Blog_ButterFly/tags/%E4%BC%A0%E6%84%9F/" style="font-size: 1.1em; color: #999">传感</a> <a href="/Blog_ButterFly/tags/%E5%AF%BC%E7%BA%B3%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">导纳控制</a> <a href="/Blog_ButterFly/tags/Linux/" style="font-size: 1.2em; color: #999da3">Linux</a> <a href="/Blog_ButterFly/tags/LQG/" style="font-size: 1.1em; color: #999">LQG</a> <a href="/Blog_ButterFly/tags/MYSQL/" style="font-size: 1.1em; color: #999">MYSQL</a> <a href="/Blog_ButterFly/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%8E%A7%E5%88%B6/" style="font-size: 1.2em; color: #999da3">非线性控制</a> <a href="/Blog_ButterFly/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/Blog_ButterFly/tags/linux%E7%BE%8E%E5%8C%96/" style="font-size: 1.3em; color: #99a1ac">linux美化</a> <a href="/Blog_ButterFly/tags/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">最优控制</a> <a href="/Blog_ButterFly/tags/gcc/" style="font-size: 1.2em; color: #999da3">gcc</a> <a href="/Blog_ButterFly/tags/ucosii/" style="font-size: 1.1em; color: #999">ucosii</a> <a href="/Blog_ButterFly/tags/MPC/" style="font-size: 1.1em; color: #999">MPC</a> <a href="/Blog_ButterFly/tags/matlab/" style="font-size: 1.1em; color: #999">matlab</a> <a href="/Blog_ButterFly/tags/Hermite/" style="font-size: 1.1em; color: #999">Hermite</a> <a href="/Blog_ButterFly/tags/PR/" style="font-size: 1.1em; color: #999">PR</a> <a href="/Blog_ButterFly/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 1.1em; color: #999">神经网络</a> <a href="/Blog_ButterFly/tags/es6/" style="font-size: 1.1em; color: #999">es6</a> <a href="/Blog_ButterFly/tags/SMC/" style="font-size: 1.1em; color: #999">SMC</a> <a href="/Blog_ButterFly/tags/Bayesian/" style="font-size: 1.1em; color: #999">Bayesian</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Blog_ButterFly/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">78</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">103</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">473.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-02-19T13:13:57.061Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: flase"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 落</div><div class="framework_runtime"><a></a></div><div class="framework-info"><img src="https://gcore.jsdelivr.net/gh/CNhuazhu/TuChuang4/blog/备案图标.png">
 <a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备2024056598号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Blog_ButterFly/js/utils.js?v=4.13.0"></script><script src="/Blog_ButterFly/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({

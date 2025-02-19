@@ -4,10 +4,6 @@ $(document).ready(function(e) {
       .html(
           '©2024 - ' + mydate.getFullYear() +
           ' <i class="fas fa-keyboard" style="color: #ffffff;"></i> By Luo');
-})
-
-
-$(document).ready(function(e) {
   show_date_time();
 })
 
