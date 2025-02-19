@@ -2,7 +2,8 @@
 $(document).ready(function(e) {
   $('.copyright')
       .html(
-          '©2024 - 2024 <i class="fas fa-keyboard" style="color: #ffffff;"></i> By Luo');
+          '©2024 - ' + mydate.getFullYear() +
+          ' <i class="fas fa-keyboard" style="color: #ffffff;"></i> By Luo');
 })
 
 
