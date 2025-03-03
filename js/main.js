@@ -193,11 +193,10 @@ document.addEventListener('DOMContentLoaded', function() {
     else {
       $figureHighlight.forEach(item => {
         if (highlightLang) {
-          let langName = item.getAttribute('class').split(
-              ' ')[1] if (langName === 'plain' || langName === undefined)
-                             langName = 'Code'
-          const highlightLangEle = `<div class="code-lang">${langName}</div>`
-          createEle(highlightLangEle, item, 'hl')
+          let langName = item.getAttribute('class').split(' ')[1];
+          if (langName === 'plain' || langName === undefined) langName = 'Code'
+            const highlightLangEle = `<div class="code-lang">${langName}</div>`
+            createEle(highlightLangEle, item, 'hl')
         } else {
           createEle('', item, 'hl')
         }
@@ -211,7 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const addPhotoFigcaption = () => {
     document.querySelectorAll('#article-container img').forEach(item => {
       const altValue = item.title || item.alt
-      if (!altValue) return const ele = document.createElement('div')
+      if (!altValue) return;
+      const ele = document.createElement('div')
       ele.className = 'img-alt is-center'
       ele.textContent = altValue
       item.insertAdjacentElement('afterend', ele)
@@ -253,27 +253,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const replaceDq = str =>
-        str.replace(/"/g, '&quot;')  // replace double quotes to &quot;
+        str.replace(/"/g, '&quot;');  // replace double quotes to &quot;
 
     const getItems =
         (nextGroupKey, count) => {
-          const nextItems = [] const startCount = (nextGroupKey - 1) * count
+          const nextItems = [];
+          const startCount = (nextGroupKey - 1) * count
 
           for (let i = 0; i < count; ++i) {
             const num = startCount + i
             if (num >= dataLength) {
-              break
+              break;
             }
 
-            const item = data[num] const alt =
-                item.alt ? `alt="${replaceDq(item.alt)}"` : ''
+            const item = data[num];
+            const alt = item.alt ? `alt="${replaceDq(item.alt)}"` : ''
             const title = item.title ? `title="${replaceDq(item.title)}"` : ''
 
             nextItems.push(`<div class="item ">
             <img src="${item.url}" data-grid-maintained-target="true" ${
                 alt + title} />
           </div>`)
-          }
+          };
           return nextItems
         }
 
@@ -349,15 +350,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const init =
         async () => {
       for (const item of ele) {
-        if (btf.isHidden(item))
-          continue if (tabs && item.classList.contains('loaded')) {
-            item.querySelector('.gallery-items').innerHTML = ''
-            const button = item.querySelector(':scope > button')
-            const loadingContainer =
-                item.querySelector(':scope > .loading-container')
-            button && button.remove()
-            loadingContainer && loadingContainer.remove()
-          }
+        if (btf.isHidden(item)) continue;
+        if (tabs && item.classList.contains('loaded')) {
+          item.querySelector('.gallery-items').innerHTML = ''
+          const button = item.querySelector(':scope > button')
+          const loadingContainer =
+              item.querySelector(':scope > .loading-container')
+          button && button.remove()
+          loadingContainer && loadingContainer.remove()
+        }
 
         const isButton = item.getAttribute('data-button') === 'true'
         const text = item.firstElementChild.textContent
@@ -550,7 +551,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(() => {autoScrollToc(currentActive)}, 0)
 
-            if (isExpand) return let parent = currentActive.parentNode
+            if (isExpand) return;
+            let parent = currentActive.parentNode
 
             for (; !parent.matches('.toc'); parent = parent.parentNode) {
               if (parent.matches('li')) parent.classList.add('active')
@@ -578,11 +580,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     Object.keys(themeChange).forEach(key => {
-      const themeChangeFn =
-          themeChange[key] if (['disqus', 'disqusjs'].includes(key)) {
+      const themeChangeFn = themeChange[key];
+      if (['disqus', 'disqusjs'].includes(key)) {
         setTimeout(() => themeChangeFn(mode), 300)
-      }
-      else {
+      } else {
         themeChangeFn(mode)
       }
     })
@@ -685,13 +686,11 @@ document.addEventListener('DOMContentLoaded', function() {
        */
       const openMobileMenu =
           () => {
-            const handleClick =
-                () => {
-                  sidebarFn.open()
-                } btf
-                          .addEventListenerPjax(
-                              document.getElementById('toggle-menu'), 'click',
-                              handleClick)
+            const handleClick = () => {
+              sidebarFn.open()
+            };
+            btf.addEventListenerPjax(
+                document.getElementById('toggle-menu'), 'click', handleClick)
           }
 
       /**
@@ -769,9 +768,11 @@ document.addEventListener('DOMContentLoaded', function() {
           () => {
             const hideButtons =
                 document.querySelectorAll('#article-container .hide-button')
-            if (!hideButtons.length) return const handleClick =
+            if (!hideButtons.length) return;
+            const handleClick =
                 function(e) {
-              const $this = this $this.classList.add('open')
+              const $this = this;
+              $this.classList.add('open')
               const $fjGallery = $this.nextElementSibling.querySelectorAll(
                   '.gallery-container')
               $fjGallery.length && addJustifiedGallery($fjGallery)
@@ -798,11 +799,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const addTabNavEventListener = (item, isJustifiedGallery) => {
-      const navClickHandler =
-          function(e) {
+      const navClickHandler = function(e) {
         const target = e.target.closest('button')
         if (target.classList.contains('active')) return removeAndAddActiveClass(
-            this.children, target) this.classList.remove('no-default')
+            this.children, target);
+        this.classList.remove('no-default')
         const tabId = target.getAttribute('data-href')
         const tabContent = this.nextElementSibling
         removeAndAddActiveClass(tabContent.children, tabId)
@@ -813,19 +814,16 @@ document.addEventListener('DOMContentLoaded', function() {
           justifiedGalleryItems.length &&
               addJustifiedGallery(justifiedGalleryItems, this)
         }
-      } btf
-              .addEventListenerPjax(
-                  item.firstElementChild, 'click', navClickHandler)
+      };
+      btf.addEventListenerPjax(item.firstElementChild, 'click', navClickHandler)
     }
 
     const addTabToTopEventListener = item => {
-      const btnClickHandler =
-          (e) => {
-            const target = e.target.closest('button')
-            if (!target) return btf.scrollToDest(btf.getEleTop(item), 300)
-          } btf
-                     .addEventListenerPjax(
-                         item.lastElementChild, 'click', btnClickHandler)
+      const btnClickHandler = (e) => {
+        const target = e.target.closest('button')
+        if (!target) return btf.scrollToDest(btf.getEleTop(item), 300)
+      };
+      btf.addEventListenerPjax(item.lastElementChild, 'click', btnClickHandler)
     }
 
     navTabsElement.forEach(item => {
@@ -841,22 +839,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('#aside-cat-list.expandBtn')
             if (!cardCategory) return
 
-                const handleToggleBtn =
-                    (e) => {
-                      const target = e.target
-                      if (target.nodeName === 'I') {
-                        e.preventDefault()
-                        target.parentNode.classList.toggle('expand')
-                      }
-                    } btf
-                               .addEventListenerPjax(
-                                   cardCategory, 'click', handleToggleBtn, true)
+                const handleToggleBtn = (e) => {
+                  const target = e.target
+                  if (target.nodeName === 'I') {
+                    e.preventDefault()
+                    target.parentNode.classList.toggle('expand')
+                  }
+                };
+            btf.addEventListenerPjax(
+                cardCategory, 'click', handleToggleBtn, true)
           }
 
       const switchComments =
           () => {
             const switchBtn = document.getElementById('switch-btn')
-            if (!switchBtn) return let switchDone = false
+            if (!switchBtn) return;
+            let switchDone = false
             const commentContainer = document.getElementById('post-comment')
             const handleSwitchBtn = () => {
               commentContainer.classList.toggle('move')
@@ -864,7 +862,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 switchDone = true
                 loadOtherComment()
               }
-            } btf.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
+            };
+            btf.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
           }
 
       const addPostOutdateNotice =
