@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>STM32CubeMX入门 | LuosBlog</title><meta name="author" content="落"><meta name="copyright" content="落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="stm32芯片的一些知识">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>STM32CubeMX入门 | LuosBlog</title><meta name="author" content="落"><meta name="copyright" content="落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于 STM32CubeMX 的 Stm32f405 芯片开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STM32CubeMX入门">
 <meta property="og:url" content="https://luo25177.github.io/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="LuosBlog">
-<meta property="og:description" content="stm32芯片的一些知识">
+<meta property="og:description" content="基于 STM32CubeMX 的 Stm32f405 芯片开发">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg">
 <meta property="article:published_time" content="2024-08-16T14:46:34.000Z">
-<meta property="article:modified_time" content="2025-04-02T11:32:10.951Z">
+<meta property="article:modified_time" content="2025-04-19T02:52:39.830Z">
 <meta property="article:author" content="落">
 <meta property="article:tag" content="stm32f4">
 <meta name="twitter:card" content="summary">
@@ -56,7 +56,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2025-04-02 19:32:10'
+  postUpdate: '2025-04-19 10:52:39'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -179,7 +179,7 @@
 </script>
 
 
-<div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog_ButterFly/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">104</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg')"><nav id="nav"><span id="blog-info"><a href="/Blog_ButterFly/" title="LuosBlog"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STM32CubeMX入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-16T14:46:34.000Z" title="发表于 2024-08-16 22:46:34">2024-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-02T11:32:10.951Z" title="更新于 2025-04-02 19:32:10">2025-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Blog_ButterFly/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">36.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>123分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="STM32CubeMX入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg)"></div><article class="post-content" id="article-container"><h2 id="前言">前言</h2>
+<div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog_ButterFly/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">104</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg')"><nav id="nav"><span id="blog-info"><a href="/Blog_ButterFly/" title="LuosBlog"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STM32CubeMX入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-16T14:46:34.000Z" title="发表于 2024-08-16 22:46:34">2024-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-19T02:52:39.830Z" title="更新于 2025-04-19 10:52:39">2025-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Blog_ButterFly/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">36.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>123分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="STM32CubeMX入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg)"></div><article class="post-content" id="article-container"><h2 id="前言">前言</h2>
 <p>cubemx是一个可以自动生成代码的单片机学习和使用的软件，非常方便，但同时配置时需要注意芯片以及外设的各个引脚的配置以及使用情况</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45396672/article/details/119155585">C语言：内存四区</a></p>
 <h3 id="下载">下载</h3>
@@ -199,7 +199,7 @@
 <p><img src="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/1722497530169.png" alt="1722497530169.png"></p>
 <h2 id="时钟树的配置">时钟树的配置</h2>
 <h3 id="时钟介绍">时钟介绍</h3>
-<p>**时钟是单片机运行的基础，时钟信号推动单片机内各个部分执行相应的指令。**时钟系统就是CPU的脉搏，决定cpu速率，像人的心跳一样 只有有了心跳，人才能做其他的事情，而单片机有了时钟，才能够运行执行指令，才能够做其他的处理 (点灯，串口，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ADC&amp;spm=1001.2101.3001.7020">ADC</a>)，时钟的重要性不言而喻。</p>
+<p><strong>时钟是单片机运行的基础，时钟信号推动单片机内各个部分执行相应的指令</strong>。时钟系统就是CPU的脉搏，决定cpu速率，像人的心跳一样 只有有了心跳，人才能做其他的事情，而单片机有了时钟，才能够运行执行指令，才能够做其他的处理 (点灯，串口，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ADC&amp;spm=1001.2101.3001.7020">ADC</a>)，时钟的重要性不言而喻。</p>
 <p>STM32本身十分复杂，外设非常多  但我们实际使用的时候只会用到有限的几个外设，使用任何外设都需要时钟才能启动，但并不是所有的外设都需要系统时钟那么高的频率，为了兼容不同速度的设备，有些高速，有些低速，如果都用高速时钟，势必造成浪费。并且，<strong>同一个电路，时钟越快功耗越快，同时抗电磁干扰能力也就越弱</strong>，所以较为复杂的MCU都是采用多时钟源的方法来解决这些问题。所以便有了STM32的时钟系统和时钟树</p>
 <h3 id="时钟系统的作用">时钟系统的作用</h3>
 <ul>
@@ -243,7 +243,7 @@
 <li><strong>鉴相器</strong>（Phase Comparator）：专用于提供一种频率会在合理的范围内随输入信号的电压幅值变化而变化的输出信号。将输入信号与参考信号比较，产生一个误差电压，这个电压反映了两个信号之间的相位差。</li>
 <li><strong>电压控制放大器</strong>（VCO，Voltage-Controlled Oscillator）：根据鉴相器输出的误差电压调整自身的输出频率。当误差减小时，VCO会增加输出频率；反之，当误差增大时，VCO会减少输出频率。</li>
 <li><strong>低通滤波器</strong>（Loop Filter）：用于平滑并限制鉴相器输出的变化，帮助 PLL 达到稳定的锁定状态。</li>
-<li>**电荷放大器：**有点像电路里的放大器</li>
+<li><strong>电荷放大器</strong>：有点像电路里的放大器</li>
 </ol>
 <p>通过这种反馈机制，锁相环可以在宽频范围内跟踪和稳定频率，常被应用在通信系统、定时基准、雷达测距以及数字信号处理等领域。</p>
 <p><strong>基本应用</strong></p>
@@ -279,8 +279,8 @@
 <p>时钟安全系统的作用就是当外部高速时钟出错时，会将时钟源切换到高速内部时钟，并且可以产生中断，从而可以进行紧急制动等紧急处理</p>
 <h3 id="rtc-和-iwdg-时钟线">RTC 和 IWDG 时钟线</h3>
 <ul>
-<li>**RTC：**这一路时钟线的时钟源只能是低速内部时钟，低速外部时钟和外部时钟的 128 分频</li>
-<li>**IWDG：**由内部低速时钟提供信号</li>
+<li><strong>RTC</strong>：这一路时钟线的时钟源只能是低速内部时钟，低速外部时钟和外部时钟的 128 分频</li>
+<li><strong>IWDG</strong>：由内部低速时钟提供信号</li>
 </ul>
 <h3 id="ptp-时钟">PTP 时钟</h3>
 <p>这是一个通过网络同步的时钟的一个协议，当硬件支持时，PTP 精度高达亚微秒</p>
@@ -370,7 +370,7 @@
 <li>打开要使用的外设时钟</li>
 </ol>
 <p>RCC 初始化就是系统时钟初始化，这个在 CubeMX 生成的代码中可以看到，也就是如下函数 ，这个函数的内部实现就是在 CubeMX 中配置的时钟树框图的配置</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">SystemClock_Config</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  RCC_OscInitTypeDef RCC_OscInitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  RCC_ClkInitTypeDef RCC_ClkInitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** Configure the main internal regulator output voltage</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  __HAL_RCC_PWR_CLK_ENABLE();</span><br><span class="line">  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** Initializes the RCC Oscillators according to the specified parameters</span></span><br><span class="line"><span class="comment">  * in the RCC_OscInitTypeDef structure.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE; <span class="comment">// 将时钟源设置为外部高速晶振</span></span><br><span class="line">  RCC_OscInitStruct.HSEState = RCC_HSE_ON; <span class="comment">// 打开外部高速时钟晶振</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON; <span class="comment">// 打开 PLL</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE; <span class="comment">// 设置 PLL 时钟源</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLM = <span class="number">6</span>; <span class="comment">// 分频 M</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLN = <span class="number">168</span>; <span class="comment">// 主PLL的倍频</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2; <span class="comment">// 分频 P</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLQ = <span class="number">4</span>; <span class="comment">// 分频 Q</span></span><br><span class="line">  <span class="keyword">if</span> (HAL_RCC_OscConfig(&amp;RCC_OscInitStruct) != HAL_OK)</span><br><span class="line">  &#123;</span><br><span class="line">    Error_Handler();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 将系统时钟，AHB 总线时钟，APB1 总线时钟，APB2 总线时钟打开</span></span><br><span class="line">  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</span><br><span class="line">                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;</span><br><span class="line">  <span class="comment">// 时钟源为 PLL</span></span><br><span class="line">  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</span><br><span class="line">  <span class="comment">// 设置 AHB 分频</span></span><br><span class="line">  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</span><br><span class="line">  <span class="comment">// 设置 APB1 分频</span></span><br><span class="line">  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;</span><br><span class="line">  <span class="comment">// 设置 APB2 分频</span></span><br><span class="line">  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;</span><br><span class="line">  <span class="keyword">if</span> (HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)</span><br><span class="line">  &#123;</span><br><span class="line">    Error_Handler();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">SystemClock_Config</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  RCC_OscInitTypeDef RCC_OscInitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  RCC_ClkInitTypeDef RCC_ClkInitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">  __HAL_RCC_PWR_CLK_ENABLE();</span><br><span class="line">  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);</span><br><span class="line"></span><br><span class="line">  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE; <span class="comment">// 将时钟源设置为外部高速晶振</span></span><br><span class="line">  RCC_OscInitStruct.HSEState = RCC_HSE_ON; <span class="comment">// 打开外部高速时钟晶振</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON; <span class="comment">// 打开 PLL</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE; <span class="comment">// 设置 PLL 时钟源</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLM = <span class="number">6</span>; <span class="comment">// 分频 M</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLN = <span class="number">168</span>; <span class="comment">// 主PLL的倍频</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2; <span class="comment">// 分频 P</span></span><br><span class="line">  RCC_OscInitStruct.PLL.PLLQ = <span class="number">4</span>; <span class="comment">// 分频 Q</span></span><br><span class="line">  <span class="keyword">if</span> (HAL_RCC_OscConfig(&amp;RCC_OscInitStruct) != HAL_OK)</span><br><span class="line">  &#123;</span><br><span class="line">    Error_Handler();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 将系统时钟，AHB 总线时钟，APB1 总线时钟，APB2 总线时钟打开</span></span><br><span class="line">  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</span><br><span class="line">                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;</span><br><span class="line">  <span class="comment">// 时钟源为 PLL</span></span><br><span class="line">  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</span><br><span class="line">  <span class="comment">// 设置 AHB 分频</span></span><br><span class="line">  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</span><br><span class="line">  <span class="comment">// 设置 APB1 分频</span></span><br><span class="line">  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;</span><br><span class="line">  <span class="comment">// 设置 APB2 分频</span></span><br><span class="line">  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;</span><br><span class="line">  <span class="keyword">if</span> (HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)</span><br><span class="line">  &#123;</span><br><span class="line">    Error_Handler();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="rcc-配置">RCC 配置</h3>
 <p><img src="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/1722517373318.png" alt="1722517373318.png"></p>
 <p>RCC 配置只需要选择 <code>High Speed Clock</code> ，这里将其设置为 <code>Crystal/Ceramic Resonator</code> 也就是晶体/陶瓷晶振，另外一个选项是 <code>BYPASS Clock Source</code> （旁路时钟）</p>
@@ -433,7 +433,7 @@
 <ul>
 <li>16位向上、向下、向上/下自动装载计数器</li>
 <li>16位可编（(可以实时修改）预分频器，计数器时钟频率的分频系数为1～65535之间的任意数值</li>
-<li>位于APB1总线上</li>
+<li>位于APB1总线上，频率为 84MHz</li>
 <li>单纯的定时计数器</li>
 </ul>
 </li>
@@ -458,7 +458,7 @@
 <li>输出比较</li>
 </ul>
 </li>
-<li>位于 APB1 总线上</li>
+<li>位于 APB1 总线上，频率为 84MHz</li>
 </ul>
 </li>
 <li>高级定时器
@@ -466,7 +466,7 @@
 <li>具有基本定时器和通用定时器的所有功能</li>
 <li>能控制交，直流电机所有功能</li>
 <li>输出 6 路互补带死区的信号，刹车功能等</li>
-<li>位于 APB2 总线上</li>
+<li>位于 APB2 总线上，频率为 168MHz</li>
 </ul>
 </li>
 </ul>
@@ -486,7 +486,7 @@
 </ul>
 <h3 id="配置">配置</h3>
 <p>这里选择 TIM2，设置时钟源为内部时钟，定时器的频率计算公式为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mfrac><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>P</mi><mi>S</mi><mi>C</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>A</mi><mi>R</mi><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">f=\frac{f_1}{(PSC+1)(ARR+1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.452216em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322159999999999em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">)</span><span class="mopen mtight">(</span><span class="mord mathdefault mtight">A</span><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31731428571428577em;"><span style="top:-2.357em;margin-left:-0.10764em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
-<p>这里将定时器设置为 1ms，并且由于该定时器是接入在 APB1 总线上的，所以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>42</mn><mi>M</mi><mi>H</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">f_1=42MHz</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> ，同时选择预分频系数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>S</mi><mi>C</mi><mo>=</mo><mn>42</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">PSC=42-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，选择自动重载数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>R</mi><mi>R</mi><mo>=</mo><mn>1000</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">ARR=1000-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，定时器频率为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">f=1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> ，也就是 1ms</p>
+<p>这里将定时器设置为 2ms，并且由于该定时器是接入在 APB1 总线上的，所以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>84</mn><mi>M</mi><mi>H</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">f_1=84MHz</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> ，同时选择预分频系数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>S</mi><mi>C</mi><mo>=</mo><mn>42</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">PSC=42-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，选择自动重载数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>R</mi><mi>R</mi><mo>=</mo><mn>1000</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">ARR=1000-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，定时器频率为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mn>2000</mn></mrow><annotation encoding="application/x-tex">f=2000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> ，也就是 2ms</p>
 <p><img src="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/1722328376974.png" alt="1722328376974.png"></p>
 <p>然后打开定时器中断，如下</p>
 <p><img src="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/1722329575570.png" alt="1722329575570.png"></p>
@@ -500,7 +500,7 @@
 <h3 id="简介">简介</h3>
 <p>脉冲宽度调制，是英文“Pulse Width Modulation”的缩写，简称<strong>脉宽调制</strong>，是利用微处理器的数字输出来对模拟电路进行控制的一种非常有效的技术，广泛应用在从测量、通信到功率控制与变换的许多领域中。</p>
 <h3 id="原理">原理</h3>
-<p>STM32F4 共有 15 个定时器：<strong>高级定时器（TIM1、TIM8）；通用定时器（TIM2、TIM3、TIM4、TIM5、TIM9~TIM14）；基本定时器（TIM6、TIM7）</strong></p>
+<p>STM32F4 共有 15 个定时器：高级定时器（TIM1、TIM8），通用定时器（TIM2、TIM3、TIM4、TIM5、TIM9~TIM14），基本定时器（TIM6、TIM7）</p>
 <p>而且 STM32 的每个通用定时器都有独立的 4 个通道可以用来作为：输入捕捉，输出比较，PWM 输出，单脉冲输出模式等。STM32 的定时器除了 TIM6 和 TIM7 之外，其它的定时器都可以产生 PWM 输出。其中高级定时器可以产生 7 路的 PWM 输出</p>
 <p>下面是向上计数模式</p>
 <p><img src="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/7381a5266713552b5880d294f3242deb.png" alt="7381a5266713552b5880d294f3242deb.png"></p>
@@ -1147,7 +1147,7 @@
 </tbody>
 </table>
 <h3 id="can-工作模式">CAN 工作模式</h3>
-<p>CAN 有三种主要工作模式：**初始化，正常和睡眠。**硬件复位之后，CAN 进入睡眠模式以降低功耗，同时 CANTX 上的内部上拉电阻激活。软件将 <code>MCR</code> 寄存器的 <code>INRQ</code> 或 <code>SLEEP</code> 位置 1，以请求 CAN 进入初始化或睡眠模式。一旦进入该模式，CAN 即将 <code>MSR</code> 寄存器的 <code>INAK</code> 或 <code>SLAK</code> 位置 1，以确认该模式，同时禁止内部上拉电阻。如果 <code>INAK</code> 和 <code>SLAK</code> 均未置 1，则 CAN 将处于正常模式。进入正常模式之前，CAN 必须始终在 CAN 总线上实现同步。<strong>为了进行同步，CAN 将等待 CAN 总线空闲</strong>（即已监测到 CAN_RX 上的 11 个隐性位）</p>
+<p>CAN 有三种主要工作模式：<strong>初始化，正常和睡眠</strong>。硬件复位之后，CAN 进入睡眠模式以降低功耗，同时 CANTX 上的内部上拉电阻激活。软件将 <code>MCR</code> 寄存器的 <code>INRQ</code> 或 <code>SLEEP</code> 位置 1，以请求 CAN 进入初始化或睡眠模式。一旦进入该模式，CAN 即将 <code>MSR</code> 寄存器的 <code>INAK</code> 或 <code>SLAK</code> 位置 1，以确认该模式，同时禁止内部上拉电阻。如果 <code>INAK</code> 和 <code>SLAK</code> 均未置 1，则 CAN 将处于正常模式。进入正常模式之前，CAN 必须始终在 CAN 总线上实现同步。<strong>为了进行同步，CAN 将等待 CAN 总线空闲</strong>（即已监测到 CAN_RX 上的 11 个隐性位）</p>
 <ul>
 <li><strong>初始化模式</strong>：当硬件处于初始化模式时，可以进行软件初始化
 <ul>
@@ -1245,7 +1245,7 @@
 </li>
 <li>发送请求次序决定
 <ul>
-<li>通过对 <code>MCR</code> 寄存器的 <code>TXFP</code> 位置位，可以把邮箱配置为**发送 FIFO。**在此模式下，发送优先级由请求次序决定</li>
+<li>通过对 <code>MCR</code> 寄存器的 <code>TXFP</code> 位置位，可以把邮箱配置为<strong>发送 FIFO</strong>。在此模式下，发送优先级由请求次序决定</li>
 </ul>
 </li>
 </ul>
@@ -1458,97 +1458,97 @@
 <h3 id="config-parameters">Config parameters</h3>
 <p>系统的参数配置</p>
 <ul>
-<li>**API：**显示 FreeRtos 调用的接口版本</li>
-<li>**Version：**显示 FreeRtos 的版本信息</li>
-<li>**MPU/FPU：**开启 MPU 或 FPU
+<li><strong>API</strong>：显示 FreeRtos 调用的接口版本</li>
+<li><strong>Version</strong>：显示 FreeRtos 的版本信息</li>
+<li><strong>MPU/FPU</strong>：开启 MPU 或 FPU
 <ul>
 <li><strong>FPU</strong>：浮点运算单元，是专门运算浮点数的处理器，以前 FPU 是一种单独的芯片，之后集成在 CPU 中</li>
 <li><strong>MPU</strong>：微处理器单元，就是把很多 CPU 集成在一起并行处理数据的芯片。但这里没有用到</li>
 </ul>
 </li>
-<li>**Kernel Setting：**FreeRTOS 调度内核设置
+<li><strong>Kernel Setting</strong>：FreeRTOS 调度内核设置
 <ul>
-<li>**USE_PREEMPTION：**是 RTOS 调度方式的选择
+<li><strong>USE_PREEMPTION</strong>：是 RTOS 调度方式的选择
 <ul>
 <li>1：使用抢占式调度器，内核会在每个时钟节拍中断中进行任务切换</li>
 <li>0：使用携程，会在某任务进入了函数 <code>taskYIELD</code> ，调用了使任务阻塞的 API 或者程序中定义了在中断中执行上下文切换这三种情况下进行任务切换</li>
 </ul>
 </li>
-<li>**CPU_CLOCK_HZ：**CPU 时钟频率，默认使用晶振通过时钟树后获得的时钟频率</li>
-<li>**TICK_RATE_HZ：**是 RTOS 的心跳时钟频率，最大为 1000，也就是心跳时钟 1ms 跳动一次</li>
-<li>**MAX_PRIORITIES：**是 RTOS 任务的最高优先级设置，默认为 56。一般优先级表是 32 位，这里用了两个就是 64 位，其中的 8 位用于系统任务的优先级处理，任务优先级号越大，任务优先级越大</li>
-<li>**MINIMAL_STACK_SIZE：**设置分配给空闲任务的堆栈大小，这里使用字来指定，所以默认的 128 个子就是 128 * 4 个字节。这里可根据具体情况修改</li>
-<li>**MAX_TASK_NAME_LEN：**任务的名称，就是任务名字的字符串的大小，这里默认的 16 字节是足够的</li>
-<li>**USE_16_BIT_TICKS：**使用存放 Tick 周期的计数器数字位宽，默认为 Disable 就是 16 位</li>
-<li>**IDLE_SHOULD_YIELD：**任务是否应该调度切换
+<li><strong>CPU_CLOCK_HZ</strong>：CPU 时钟频率，默认使用晶振通过时钟树后获得的时钟频率</li>
+<li><strong>TICK_RATE_HZ</strong>：是 RTOS 的心跳时钟频率，最大为 1000，也就是心跳时钟 1ms 跳动一次</li>
+<li><strong>MAX_PRIORITIES</strong>：是 RTOS 任务的最高优先级设置，默认为 56。一般优先级表是 32 位，这里用了两个就是 64 位，其中的 8 位用于系统任务的优先级处理，任务优先级号越大，任务优先级越大</li>
+<li><strong>MINIMAL_STACK_SIZE</strong>：设置分配给空闲任务的堆栈大小，这里使用字来指定，所以默认的 128 个子就是 128 * 4 个字节。这里可根据具体情况修改</li>
+<li><strong>MAX_TASK_NAME_LEN</strong>：任务的名称，就是任务名字的字符串的大小，这里默认的 16 字节是足够的</li>
+<li><strong>USE_16_BIT_TICKS</strong>：使用存放 Tick 周期的计数器数字位宽，默认为 Disable 就是 16 位</li>
+<li><strong>IDLE_SHOULD_YIELD</strong>：任务是否应该调度切换
 <ul>
 <li>1：当有另一个空闲优先级任务处于 Ready 状态时，空闲任务将不会执行它定义的功能的不止一次迭代，而不会让位于另一个任务。这确保当应用程序任务处于空闲状态时，在空闲任务中花费的时间最少，即同在空闲优先级下，空闲任务优先级更高，不会被抢占，不会以时间片运行</li>
 <li>0：空闲任务永远不会让位于另一个任务，只在被抢占时才会离开运行状态</li>
 </ul>
 </li>
-<li>**USE_MUTEXES：**开启系统构建过程中的互斥量</li>
-<li>**USE_RECURSIVE_MUTEXES：**开启系统构建过程中的递归互斥量</li>
-<li>**USE_COUNTING_SEMAPHORES：**开启系统构建过程中的信号量</li>
-<li>**QUEUE_REGISTRY_SIZE：**队列注册表的大小，可以用于管理队列名称和队列实体，方便运行中进行查看与管理，默认为 8</li>
-<li>**USE_APPLICATION_TASK_TAG：**使能时给任务一个 TAG 标签，便于用户使用</li>
-<li>**ENABLE_BACKWARD_COMPATIBILITY：**一个兼容性使能，使能后 FreeRTOS 8.0.0 之后的版本可以通过宏定义使用 8.0.0 版本之前的函数接口，默认使能</li>
-<li>**USE_PORT_OPTIMISED_TASK_SELECTION：**查找下一个任务方式的选择，查找下一个就绪任务就是查找优先级表，对优先级表进行导 0 算法，分为通用切换或针对性切换
+<li><strong>USE_MUTEXES</strong>：开启系统构建过程中的互斥量</li>
+<li><strong>USE_RECURSIVE_MUTEXES</strong>：开启系统构建过程中的递归互斥量</li>
+<li><strong>USE_COUNTING_SEMAPHORES</strong>：开启系统构建过程中的信号量</li>
+<li><strong>QUEUE_REGISTRY_SIZE</strong>：队列注册表的大小，可以用于管理队列名称和队列实体，方便运行中进行查看与管理，默认为 8</li>
+<li><strong>USE_APPLICATION_TASK_TAG</strong>：使能时给任务一个 TAG 标签，便于用户使用</li>
+<li><strong>ENABLE_BACKWARD_COMPATIBILITY</strong>：一个兼容性使能，使能后 FreeRTOS 8.0.0 之后的版本可以通过宏定义使用 8.0.0 版本之前的函数接口，默认使能</li>
+<li><strong>USE_PORT_OPTIMISED_TASK_SELECTION</strong>：查找下一个任务方式的选择，查找下一个就绪任务就是查找优先级表，对优先级表进行导 0 算法，分为通用切换或针对性切换
 <ul>
 <li>1：针对性切换使用处理器自带的导 0 指令，使用汇编编写，切换效率高，但兼容性差</li>
 <li>0：默认，使用通用切换，使用 C 编写，执行效率低，但兼容性好</li>
 </ul>
 </li>
-<li>**USE_TICKLESS_IDLE：**使能后生成两个空函数 <code>PreSleepProcessing</code> 和 <code>PostSleepProcessing</code> ，用户可以编写代码进入低功耗模式</li>
-<li>**USE_TASK_NOTIFICATIONS：**任务通知使能，每个 RTOS 任务都有一个 32 位的通知值，RTOS 任务通知是一个直接发送给任务的事件，它可以解除接收任务的阻塞，并可选地更新接收任务的通知值
+<li><strong>USE_TICKLESS_IDLE</strong>：使能后生成两个空函数 <code>PreSleepProcessing</code> 和 <code>PostSleepProcessing</code> ，用户可以编写代码进入低功耗模式</li>
+<li><strong>USE_TASK_NOTIFICATIONS</strong>：任务通知使能，每个 RTOS 任务都有一个 32 位的通知值，RTOS 任务通知是一个直接发送给任务的事件，它可以解除接收任务的阻塞，并可选地更新接收任务的通知值
 <ul>
 <li>1：开启</li>
 <li>0：关闭，可以为每个任务节省 8 个字节的内存空间</li>
 </ul>
 </li>
-<li>**RECORD_STACK_HIGH_ADDRESS：**记录任务堆栈入口地址到 TCB，1 使能，0 关闭</li>
+<li><strong>RECORD_STACK_HIGH_ADDRESS</strong>：记录任务堆栈入口地址到 TCB，1 使能，0 关闭</li>
 </ul>
 </li>
-<li>**Memory management setting：**内存管理设置
+<li><strong>Memory management setting</strong>：内存管理设置
 <ul>
-<li>**Memory Allocation：**内存分配方式，此处是默认，动态和静态都可以</li>
-<li>**TOTAL_HEAP_SIZE：**内存堆的分配大小。堆本质就是一个数组，此处是设置堆数组的大小，设置时需要考虑最小要满足所有任务的使用要求，最大不能超过系统分配上限</li>
-<li>**Memory Management scheme：**内存分配方式，有 heap_1~heap_5 5 种。其中 1，2，4，5 都是先建立一个数组堆，从数组中申请，用完再释放，与 C 语言中 <code>malloc</code> 和 <code>free</code> 使用链表的方式不一样，该方法在 MCU 中更安全稳定，此处默认使用的是 heap_4。具体申请和释放内存方式在 hea_4.c 中可看到</li>
+<li><strong>Memory Allocation</strong>：内存分配方式，此处是默认，动态和静态都可以</li>
+<li><strong>TOTAL_HEAP_SIZE</strong>：内存堆的分配大小。堆本质就是一个数组，此处是设置堆数组的大小，设置时需要考虑最小要满足所有任务的使用要求，最大不能超过系统分配上限</li>
+<li><strong>Memory Management scheme</strong>：内存分配方式，有 heap_1~heap_5 5 种。其中 1，2，4，5 都是先建立一个数组堆，从数组中申请，用完再释放，与 C 语言中 <code>malloc</code> 和 <code>free</code> 使用链表的方式不一样，该方法在 MCU 中更安全稳定，此处默认使用的是 heap_4。具体申请和释放内存方式在 hea_4.c 中可看到</li>
 </ul>
 </li>
-<li>**Hool function related definitions：**钩子函数配置。钩子函数是一种回调函数，用于在任务执行一次之后或者某些事件发生后执行的函数，该配置项里面有五个选项，控制5种不同功能的钩子函数开启，当然用户也可以在代码中自己定义
+<li><strong>Hool function related definitions</strong>：钩子函数配置。钩子函数是一种回调函数，用于在任务执行一次之后或者某些事件发生后执行的函数，该配置项里面有五个选项，控制5种不同功能的钩子函数开启，当然用户也可以在代码中自己定义
 <ul>
-<li>**USE_IDLE_HOOK：**使能之后，系统生成一个空的回调函数 <code>void vApplicationIdleHook(void)</code> ，由用户编写函数主体。每当空闲任务执行一次，钩子函数被执行一次</li>
-<li>**USE_TICK_HOOK：**使能后，系统生成一个空回调函数 <code>void vApplicationTickHook(void)</code> ，由用户编写函数主体。每个 TICK 周期，钩子函数执行一次</li>
-<li>**USE_MALLOC_FAILED_HOOK：**使能之后，系统生成一个空的回调函数 ****<code>void vApplicationMallocFailedHook(void)</code> ，由用户编写函数主体，当申请动态内存失败时，钩子函数会执行一次</li>
-<li>**USE_DAEMON_TASK_STARTUP_HOOK：**使能之后，系统生成一个空回调函数 <code>void vApplicationDaemonTaskStartupHook(void)</code> ，任务刚启动时，钩子函数会执行一次</li>
-<li>**CHECK_FOR_STACK_OVERFLOW：**使能之后，系统生成一个空回调函数 <code>void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)</code> ，任务栈溢出时，钩子函数会执行一次，传入任务 TCB 和任务名称</li>
+<li><strong>USE_IDLE_HOOK</strong>：使能之后，系统生成一个空的回调函数 <code>void vApplicationIdleHook(void)</code> ，由用户编写函数主体。每当空闲任务执行一次，钩子函数被执行一次</li>
+<li><strong>USE_TICK_HOOK</strong>：使能后，系统生成一个空回调函数 <code>void vApplicationTickHook(void)</code> ，由用户编写函数主体。每个 TICK 周期，钩子函数执行一次</li>
+<li><strong>USE_MALLOC_FAILED_HOOK</strong>：使能之后，系统生成一个空的回调函数 <code>void vApplicationMallocFailedHook(void)</code> ，由用户编写函数主体，当申请动态内存失败时，钩子函数会执行一次</li>
+<li><strong>USE_DAEMON_TASK_STARTUP_HOOK</strong>：使能之后，系统生成一个空回调函数 <code>void vApplicationDaemonTaskStartupHook(void)</code> ，任务刚启动时，钩子函数会执行一次</li>
+<li><strong>CHECK_FOR_STACK_OVERFLOW</strong>：使能之后，系统生成一个空回调函数 <code>void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)</code> ，任务栈溢出时，钩子函数会执行一次，传入任务 TCB 和任务名称</li>
 </ul>
 </li>
-<li>**Run time and task stats gathering related definitions：**任务运行跟踪配置
+<li><strong>Run time and task stats gathering related definitions</strong>：任务运行跟踪配置
 <ul>
-<li>**GENERATE_RUN_TIME_STATS：**开启时间统计功能，在调用 <code>vTaskGetRunTimeStats()</code> 函数时，将任务运行时间信息保存到可读列表中</li>
-<li>**USE_TRACE_FACILITY：**使能后会包含额外的结构成员和函数以帮助执行可视化和跟踪，默认开启，方便 MDK 软件工具调试使用</li>
-<li>**USE_STATS_FORMATTING_FUNCTIONS：**使能后会生成 <code>vTaskList()</code> 和 <code>vTaskGetRunTimeStats()</code> 函数用于获取任务运行状态</li>
+<li><strong>GENERATE_RUN_TIME_STATS</strong>：开启时间统计功能，在调用 <code>vTaskGetRunTimeStats()</code> 函数时，将任务运行时间信息保存到可读列表中</li>
+<li><strong>USE_TRACE_FACILITY</strong>：使能后会包含额外的结构成员和函数以帮助执行可视化和跟踪，默认开启，方便 MDK 软件工具调试使用</li>
+<li><strong>USE_STATS_FORMATTING_FUNCTIONS</strong>：使能后会生成 <code>vTaskList()</code> 和 <code>vTaskGetRunTimeStats()</code> 函数用于获取任务运行状态</li>
 </ul>
 </li>
-<li>**Co-routine related definitions：**协程配置。
+<li><strong>Co-routine related definitions</strong>：协程配置。
 <ul>
-<li>**USE_CO_ROUTINES：**是否开启协程。开启之后需要用户手动创建协程，实际上协程很少用到了，而且 FreeRTOS 已经不会更新和维护协程了</li>
-<li>**MAX_CO_ROUTINE_PRIORITIES：**协程最大优先级</li>
+<li><strong>USE_CO_ROUTINES</strong>：是否开启协程。开启之后需要用户手动创建协程，实际上协程很少用到了，而且 FreeRTOS 已经不会更新和维护协程了</li>
+<li><strong>MAX_CO_ROUTINE_PRIORITIES</strong>：协程最大优先级</li>
 </ul>
 </li>
-<li>**Software timer definitions：**软件定时器配置
+<li><strong>Software timer definitions</strong>：软件定时器配置
 <ul>
-<li>**USE_TIMERS：**默认开启软件定时器任务</li>
-<li>**TIMER_TASK_PRIORITY：**软件定时器任务优先级</li>
-<li>**TIMER_QUEUE_LENGTH：**定时器任务队列长度，FreeRTOS 是通过队列来发送控制命令给定时器任务，叫做定时器命令队列</li>
-<li>**TMER_TASK_STACK_DEPTH：**软件定时器任务堆栈大小</li>
+<li><strong>USE_TIMERS</strong>：默认开启软件定时器任务</li>
+<li><strong>TIMER_TASK_PRIORITY</strong>：软件定时器任务优先级</li>
+<li><strong>TIMER_QUEUE_LENGTH</strong>：定时器任务队列长度，FreeRTOS 是通过队列来发送控制命令给定时器任务，叫做定时器命令队列</li>
+<li><strong>TMER_TASK_STACK_DEPTH</strong>：软件定时器任务堆栈大小</li>
 </ul>
 </li>
-<li>**Interrupt nesting behaviour configuration：**中断优先级设置
+<li><strong>Interrupt nesting behaviour configuration</strong>：中断优先级设置
 <ul>
-<li>**LIBRARY_LOWEST_INTERRUPT_PRIORITY：**用来设置最低优先级的，FreeRTOS 使用的 4 位优先级，对应 16 位优先级，对应的最低优先级为 15</li>
-<li>**LIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY：**设置FreeRTOS 系统可管理的最大优先级，也就是设置阈值优先级，这个大家可以自由设置，这里设置为 5，也就是高于 5 的优先级（优先级数小于 5）不归 FreeRTOS 管理</li>
+<li><strong>LIBRARY_LOWEST_INTERRUPT_PRIORITY</strong>：用来设置最低优先级的，FreeRTOS 使用的 4 位优先级，对应 16 位优先级，对应的最低优先级为 15</li>
+<li><strong>LIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</strong>：设置FreeRTOS 系统可管理的最大优先级，也就是设置阈值优先级，这个大家可以自由设置，这里设置为 5，也就是高于 5 的优先级（优先级数小于 5）不归 FreeRTOS 管理</li>
 </ul>
 </li>
 </ul>
@@ -1914,44 +1914,44 @@
 </ul>
 <h3 id="freertos-特点">FreeRTOS 特点</h3>
 <ul>
-<li>**实时性：**FreeRTOS可以配置成为一个硬实时操作系统内核，也可以配置为非实时型内核，甚至于部分任务是实时性的，部分不是</li>
-<li>**任务数量：**FreeRTOS对任务数没有限制，同一优先级也可以有多个任务</li>
-<li>**抢占式或协作式调度算法：**任务调度既可以为抢占式也可以为协作式。采用协作式调度算法后，一个处于运行态任务除非主动要求任务切换，否则是不会被调度出运行态的</li>
-<li>**任务调度的时间点：**调度器会在每次定时中断到来时决定任务调度，同时外部异步事件也会引起调度器任务调度</li>
-<li>**调度算法：**任务调度算法首先满足高优先级任务最先执行，当多于 1 个任务具有相同的高优先级时，采用 round robin 算法调度</li>
-<li>**优先级翻转：**FreeRTOS 没有提供优先级继承机制或其他的避免优先级翻转的方法</li>
-<li>**任务间通信：**FreeRTOS 支持队列和几种基本的任务同步机制
+<li><strong>实时性</strong>：FreeRTOS可以配置成为一个硬实时操作系统内核，也可以配置为非实时型内核，甚至于部分任务是实时性的，部分不是</li>
+<li><strong>任务数量</strong>：FreeRTOS对任务数没有限制，同一优先级也可以有多个任务</li>
+<li><strong>抢占式或协作式调度算法</strong>：任务调度既可以为抢占式也可以为协作式。采用协作式调度算法后，一个处于运行态任务除非主动要求任务切换，否则是不会被调度出运行态的</li>
+<li><strong>任务调度的时间点</strong>：调度器会在每次定时中断到来时决定任务调度，同时外部异步事件也会引起调度器任务调度</li>
+<li><strong>调度算法</strong>：任务调度算法首先满足高优先级任务最先执行，当多于 1 个任务具有相同的高优先级时，采用 round robin 算法调度</li>
+<li><strong>优先级翻转</strong>：FreeRTOS 没有提供优先级继承机制或其他的避免优先级翻转的方法</li>
+<li><strong>任务间通信</strong>：FreeRTOS 支持队列和几种基本的任务同步机制
 <ul>
-<li>**消息队列：**任务间传递信息可以采用队列方式，FreeRTOS实现的队列机制传递信息是采用传值方式，因此对于传递大量数据效率有些低。但可以通过传递指针的方式提高效率。中断处理函数中读写队列都是非阻塞型的。任务中读写队列可以为阻塞型也可以配置非阻塞型。当配置为阻塞型时可以指定一个阻塞的最大时间限（Timeout）。</li>
-<li>**任务间同步：**FreeRTOS 支持基本的信号量功能。FreeRTOS 采用队列来实现信号量的功能，可以认为一个值为n的信号量就是一个长度为n的队列，队列中每个元素的大小为0。这样的队列并不会浪费宝贵的内存空间。</li>
-<li><strong>对于死锁（Deadlock）的处理：</strong> FreeRTOS 并没有实现一种可以完全避免死锁的机制。只是通过指定一个阻塞的最大时间限（Timeout）来减少死锁现象的发生。或者说是给出了当死锁现象发生时解锁的可能。当然能不能真的解锁要依赖于使用者的处理代码是否合适。</li>
-<li>**临界区：**FreeRTOS 采用开关中断的方式实现临界区保护。任务代码中临界区可以嵌套，FreeRTOS 会自动记录每个任务中临界区嵌套的层数。</li>
-<li>**暂停调度：**与进入临界区类似，FreeRTOS 可以通过暂时关闭任务调度来保证任务代码不被更高优先级的其他任务打断，与临界区不同，关闭任务调度并不会关闭中断，这样中断处理函数仍会照常的执行。</li>
+<li><strong>消息队列</strong>：任务间传递信息可以采用队列方式，FreeRTOS实现的队列机制传递信息是采用传值方式，因此对于传递大量数据效率有些低。但可以通过传递指针的方式提高效率。中断处理函数中读写队列都是非阻塞型的。任务中读写队列可以为阻塞型也可以配置非阻塞型。当配置为阻塞型时可以指定一个阻塞的最大时间限（Timeout）。</li>
+<li><strong>任务间同步</strong>：FreeRTOS 支持基本的信号量功能。FreeRTOS 采用队列来实现信号量的功能，可以认为一个值为n的信号量就是一个长度为n的队列，队列中每个元素的大小为0。这样的队列并不会浪费宝贵的内存空间。</li>
+<li><strong>对于死锁（Deadlock）的处理</strong>： FreeRTOS 并没有实现一种可以完全避免死锁的机制。只是通过指定一个阻塞的最大时间限（Timeout）来减少死锁现象的发生。或者说是给出了当死锁现象发生时解锁的可能。当然能不能真的解锁要依赖于使用者的处理代码是否合适。</li>
+<li><strong>临界区</strong>：FreeRTOS 采用开关中断的方式实现临界区保护。任务代码中临界区可以嵌套，FreeRTOS 会自动记录每个任务中临界区嵌套的层数。</li>
+<li><strong>暂停调度</strong>：与进入临界区类似，FreeRTOS 可以通过暂时关闭任务调度来保证任务代码不被更高优先级的其他任务打断，与临界区不同，关闭任务调度并不会关闭中断，这样中断处理函数仍会照常的执行。</li>
 </ul>
 </li>
-<li>**内存分配：**FreeRTOS 提供了多种内存动态分配的方法，具体程序中需要选择其中一种。最简单的内存分配方式提供了一种非常简单的固定内存分配算法，这种方式下只支持内存的分配，不支持分配内存的回收。因此，任务建立后就不能被删除。其他几种内存分配算法支持分配内存的回收，有的方法支持邻接内存块的合并，有些不支持。对于 uCOS-II 中内存分配的方法，既保证了实时性，也具有一定的灵活性。FreeRTOS 中提供的几种方式，实时性好的功能上有缺陷，功能上完善的实时性却不好</li>
+<li><strong>内存分配</strong>：FreeRTOS 提供了多种内存动态分配的方法，具体程序中需要选择其中一种。最简单的内存分配方式提供了一种非常简单的固定内存分配算法，这种方式下只支持内存的分配，不支持分配内存的回收。因此，任务建立后就不能被删除。其他几种内存分配算法支持分配内存的回收，有的方法支持邻接内存块的合并，有些不支持。对于 uCOS-II 中内存分配的方法，既保证了实时性，也具有一定的灵活性。FreeRTOS 中提供的几种方式，实时性好的功能上有缺陷，功能上完善的实时性却不好</li>
 </ul>
 <h3 id="freertos-任务调度机制">FreeRTOS 任务调度机制</h3>
 <p><strong>调度策略</strong></p>
 <ul>
-<li>**可抢占：**在可抢占式调度中，任务可以被更高优先级的任务抢占。当一个高优先级任务变得可用时，它可以打断当前正在执行的低优先级任务，从而使系统立即切换到高优先级任务执行，无论被抢占的任务是否已经执行完其时间片。它确保了高优先级任务能够及时响应，并在需要时立即执行，不受低优先级任务的阻碍。通过设置 <code>configUSE_PREEMPTION</code> 来决定是否启动抢占</li>
-<li>**时间片轮转：**操作系统为每个任务分配一个时间片，即预定义的时间量。在时间片轮转调度方式下，每个任务可以执行一个时间片，然后系统将控制权移交给下一个就绪的任务。如果一个任务在其时间片结束前没有完成，系统会暂停该任务，将控制权交给下一个就绪的任务。时间片的大小可以根据应用程序的需要进行调整。这种调度方式有助于确保任务之间的公平性，避免某些任务长时间占用处理器，同时允许多个任务分享处理时间。通过设置 <code>configUSE_TIME_SLICING</code> 来决定是否启用时间片轮转</li>
-<li>**组合应用：**可抢占和时间片轮转调度方式可以结合使用。这样可以实现灵活的任务管理，确保高优先级任务能够抢占低优先级任务，并且为任务提供公平的处理器时间，从而有效地管理系统资源</li>
+<li><strong>可抢占</strong>：在可抢占式调度中，任务可以被更高优先级的任务抢占。当一个高优先级任务变得可用时，它可以打断当前正在执行的低优先级任务，从而使系统立即切换到高优先级任务执行，无论被抢占的任务是否已经执行完其时间片。它确保了高优先级任务能够及时响应，并在需要时立即执行，不受低优先级任务的阻碍。通过设置 <code>configUSE_PREEMPTION</code> 来决定是否启动抢占</li>
+<li><strong>时间片轮转</strong>：操作系统为每个任务分配一个时间片，即预定义的时间量。在时间片轮转调度方式下，每个任务可以执行一个时间片，然后系统将控制权移交给下一个就绪的任务。如果一个任务在其时间片结束前没有完成，系统会暂停该任务，将控制权交给下一个就绪的任务。时间片的大小可以根据应用程序的需要进行调整。这种调度方式有助于确保任务之间的公平性，避免某些任务长时间占用处理器，同时允许多个任务分享处理时间。通过设置 <code>configUSE_TIME_SLICING</code> 来决定是否启用时间片轮转</li>
+<li><strong>组合应用</strong>：可抢占和时间片轮转调度方式可以结合使用。这样可以实现灵活的任务管理，确保高优先级任务能够抢占低优先级任务，并且为任务提供公平的处理器时间，从而有效地管理系统资源</li>
 </ul>
 <p><strong>实现核心</strong></p>
 <p>任务管理使用就绪链表，阻塞链表和挂起链表来管理任务的状态和调度。这些链表用于维护不同状态的任务列表</p>
 <ul>
-<li>**就绪链表：**就绪链表包含所有处于就绪状态的任务。就绪状态的任务就是已经准备好运行，但由于当前执行的任务正在占用 CPU 资源，它们暂时无法立即执行。这些任务按照优先级被组织在就绪链表中。当当前正在执行的任务释放 CPU（例如，由于时间片用完，任务阻塞或挂起等原因）时，调度器从就绪链表中选择优先级最高的任务来执行</li>
-<li>**阻塞链表：**阻塞链表包含那些由于某种原因而无法立即执行的任务。这些原因可能包括等待某个事件、资源不可用、延时等情况。当任务处于阻塞状态时，它们不会被调度器所执行。这些任务会在特定条件满足之后重新放入就绪链表，等待调度器选择其执行</li>
-<li>**挂起链表：**挂起链表包含已被显式挂起的任务。当任务被挂起时，它们暂时停止运行，不再参与调度。这些任务不会出现在就绪链表或阻塞链表中，因为它们被明确地挂起，不参与任务调度。</li>
+<li><strong>就绪链表</strong>：就绪链表包含所有处于就绪状态的任务。就绪状态的任务就是已经准备好运行，但由于当前执行的任务正在占用 CPU 资源，它们暂时无法立即执行。这些任务按照优先级被组织在就绪链表中。当当前正在执行的任务释放 CPU（例如，由于时间片用完，任务阻塞或挂起等原因）时，调度器从就绪链表中选择优先级最高的任务来执行</li>
+<li><strong>阻塞链表</strong>：阻塞链表包含那些由于某种原因而无法立即执行的任务。这些原因可能包括等待某个事件、资源不可用、延时等情况。当任务处于阻塞状态时，它们不会被调度器所执行。这些任务会在特定条件满足之后重新放入就绪链表，等待调度器选择其执行</li>
+<li><strong>挂起链表</strong>：挂起链表包含已被显式挂起的任务。当任务被挂起时，它们暂时停止运行，不再参与调度。这些任务不会出现在就绪链表或阻塞链表中，因为它们被明确地挂起，不参与任务调度。</li>
 </ul>
 <p>这些链表是 FreeRTOS 内部任务管理的一部分，并且开发者可以通过 FreeRTOS 提供的 API 函数来管理和操作任务的状态以及链表中的任务</p>
 <h3 id="freertos-任务释放-cpu-的几种情况">FreeRTOS 任务释放 CPU 的几种情况</h3>
 <ol>
-<li>**任务主动让出CPU：**任务可以调用 <code>osDelay</code> 函数或者 <code>osDelayUntil</code> 函数，将自己挂起一段时间，以便其他任务能够运行。这种方式是任务主动放弃CPU的一种方式。</li>
-<li>**阻塞等待事件：**任务可以调用 FreeRTOS 提供的阻塞函数，如 <code>osMessageQueueGet</code> 和 <code>osSemaphoreAcquire</code> 等，来等待特定事件的发生。当任务在等待某个事件时，它会被置于阻塞状态，从而释放 CPU，直到事件发生后才会被唤醒。</li>
-<li>**时间片轮转：**如果使用了时间片轮转调度策略，任务会在其时间片用尽时自动释放CPU，允许其他任务运行。时间片轮转是一种公平分配CPU时间的策略，每个任务都有一个小的时间片来执行，然后被放回就绪队列，等待下一次执行。</li>
-<li>**任务进入阻塞状态：**任务在执行过程中，如果发生某些阻塞事件，如等待一个队列满足条件和等待互斥信号量等，会自动进入阻塞状态，这时会释放 CPU。一旦阻塞条件得到满足，任务将被重新置于就绪状态。</li>
+<li><strong>任务主动让出CPU</strong>：任务可以调用 <code>osDelay</code> 函数或者 <code>osDelayUntil</code> 函数，将自己挂起一段时间，以便其他任务能够运行。这种方式是任务主动放弃CPU的一种方式。</li>
+<li><strong>阻塞等待事件</strong>：任务可以调用 FreeRTOS 提供的阻塞函数，如 <code>osMessageQueueGet</code> 和 <code>osSemaphoreAcquire</code> 等，来等待特定事件的发生。当任务在等待某个事件时，它会被置于阻塞状态，从而释放 CPU，直到事件发生后才会被唤醒。</li>
+<li><strong>时间片轮转</strong>：如果使用了时间片轮转调度策略，任务会在其时间片用尽时自动释放CPU，允许其他任务运行。时间片轮转是一种公平分配CPU时间的策略，每个任务都有一个小的时间片来执行，然后被放回就绪队列，等待下一次执行。</li>
+<li><strong>任务进入阻塞状态</strong>：任务在执行过程中，如果发生某些阻塞事件，如等待一个队列满足条件和等待互斥信号量等，会自动进入阻塞状态，这时会释放 CPU。一旦阻塞条件得到满足，任务将被重新置于就绪状态。</li>
 </ol>
 <h3 id="freertos-使能之后黄色感叹号">FreeRTOS 使能之后黄色感叹号</h3>
 <p><strong>When FreeRTOS is used, it is strongly recommanded to use HAL timebase source other than the Systick</strong></p>
@@ -1973,7 +1973,7 @@
 </ul>
 <h3 id="exti">EXTI</h3>
 <p><img src="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/5b66279347282125064682f5b1ed4b00.png" alt="5b66279347282125064682f5b1ed4b00.png"></p>
-<p><strong>EXTI 支持配置 20 个 中断和事件屏蔽位：</strong></p>
+<p><strong>EXTI 支持配置 20 个 中断和事件屏蔽位</strong>：</p>
 <ul>
 <li><code>EXTI_Line0~EXTI_Line15</code> ：GPIO 对应的引脚所触发的中断</li>
 <li><code>EXTI_Line16</code> ：连接到 PVD 输出</li>
@@ -2158,7 +2158,7 @@
 <p>如果片选引脚没有连接这两个引脚，则需要选择软件片选</p>
 <p>对应的软件片选，需要设置对应的引脚，比如这里就是选择 PA4 和 PB0 作为软件片选引脚，将其设置为输出模式</p>
 <blockquote>
-<p><strong>NSS 管脚以及片选信号：</strong></p>
+<p><strong>NSS 管脚以及片选信号</strong>：</p>
 <p>作为主设备 NSS 管脚为高电平，从设备 NSS 管脚为低电平。当 NSS 管脚为低电平时，该 SPI 设备被选中，可以和主设备进行通信</p>
 <p>在 STM32 中，每个 SPI 控制器的 NSS 信号引脚都具有两种功能，即输入和输出</p>
 <ul>
