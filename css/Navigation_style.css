@@ -5,3 +5,9 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* 翻页按钮居中 */
+#pagination {
+    width: 100%;
+    margin: auto;
+}
