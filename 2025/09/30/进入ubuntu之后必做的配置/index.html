@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>进入ubuntu之后必做的配置 | LuosBlog</title><meta name="author" content="落"><meta name="copyright" content="落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="刚开始进入 ubuntu 之后要做的一些配置，建议先做，做出问题重来时间成本低">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进入ubuntu之后必做的配置">
+<meta property="og:url" content="https://luo25177.github.io/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="LuosBlog">
+<meta property="og:description" content="刚开始进入 ubuntu 之后要做的一些配置，建议先做，做出问题重来时间成本低">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png">
+<meta property="article:published_time" content="2025-09-29T17:07:09.000Z">
+<meta property="article:modified_time" content="2025-10-29T11:10:55.997Z">
+<meta property="article:author" content="落">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png"><link rel="shortcut icon" href="/Blog_ButterFly/img/logo3.png"><link rel="canonical" href="https://luo25177.github.io/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Blog_ButterFly/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/Blog_ButterFly/',
+  algolia: undefined,
+  localSearch: {"path":"/Blog_ButterFly/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '进入ubuntu之后必做的配置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-10-29 19:10:55'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/Blog_ButterFly/css/page_title.css"><link rel="stylesheet" href="/Blog_ButterFly/css/gongshidisplay.css"><link rel="stylesheet" href="/Blog_ButterFly/css/Navigation_style.css"><link rel="stylesheet" href="/Blog_ButterFly/css/fonts.css"><link rel="stylesheet" href="/Blog_ButterFly/css/mouse.css"><link rel="stylesheet" href="/Blog_ButterFly/css/forbiden.css"><link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" ><link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" ><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body>
+<div id='loader'>
+    
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+        <div class="configure-border-1">
+            <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+            <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+    </div>
+    
+</div>
+    
+<script>
+    var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+    }
+    window.addEventListener('load',endLoading);
+</script>
+
+
+<div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog_ButterFly/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">117</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png')"><nav id="nav"><span id="blog-info"><a href="/Blog_ButterFly/" title="LuosBlog"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">进入ubuntu之后必做的配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-29T17:07:09.000Z" title="发表于 2025-09-30 01:07:09">2025-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-29T11:10:55.997Z" title="更新于 2025-10-29 19:10:55">2025-10-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Blog_ButterFly/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="进入ubuntu之后必做的配置"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png)"></div><article class="post-content" id="article-container"><h2 id="安装显卡驱动">安装显卡驱动</h2>
+<p>众所周知，在 ubuntu 上很多项目都需要利用 CUDA 调用 GPU 来进行高效的并行计算，CUDA通过CPU任务分发和GPU并行处理的方式，显著提升计算效率，尤其在需要大规模并行计算的人工智能和深度学习领域发挥着关键作用。但是想要使用 CUDA 就需要安装 NVIDIA 的显卡驱动，但是很多时候安装就很容易出问题，所以如果要用的话，就把它作为第一件事，降低时间成本。</p>
+<h3 id="查找驱动">查找驱动</h3>
+<p>在 NVIDIA 官网的驱动页面，可以自己选择手动搜索驱动程序，根据自己电脑的显卡型号（可以上网查查，或者查看购买记录），搜索适合自己显卡的驱动</p>
+<h3 id="查看合适的版本号">查看合适的版本号</h3>
+<p>需要利用外部的工具来查看合适的 NVIDIA 合适的版本号，ubuntu-drivers-common 是 ubuntu 系统中用于管理硬件驱动的核心工具，特别是针对专有驱动程序（如 NVIDIA/AMD 显卡驱动、无线网卡驱动等）。它提供了 ubuntu-drivers 命令行工具，能够自动扫描硬件并列出可用的驱动版本（包括开源和专有驱动）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ubuntu-drivers-common</span><br><span class="line">ubuntu-drivers devices</span><br></pre></td></tr></table></figure>
+<p>看看推荐哪个版本的，到时候到官网上就下载对应版本的驱动即可，小版本号一般不是很重要，可以选择一个较新的小版本号</p>
+<h3 id="禁用-nouveau">禁用 nouveau</h3>
+<p>很多Linux发行版默认集成了Nouveau驱动，在使用NVIDIA显卡时默认安装Nouveau驱动。但是用户除了想让正常显示图形界面外很多时候还需要一些其他功能，Nouveau驱动不能完成，同时还会对安装其他插件造成干扰，因此需要禁用掉</p>
+<p>打开黑名单</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/modprobe.d/blacklist-nouveau.conf</span><br></pre></td></tr></table></figure>
+<p>将 nouveau 拉入黑名单</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">blacklist nouveau</span><br><span class="line">options nouveau modeset=0</span><br></pre></td></tr></table></figure>
+<p>更新 initramfs</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-initramfs -u</span><br></pre></td></tr></table></figure>
+<p>重启之后，检验是否禁用成功，若无输出则表示禁用成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep nouveau</span><br></pre></td></tr></table></figure>
+<p>在安装 NVIDIA 之前需要禁用掉 nouveau</p>
+<h3 id="安装">安装</h3>
+<p>下载之后是一个 <code>.run</code> 文件，为其添加可执行权限，之后执行安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x xxx.run</span><br><span class="line">./xxx.run</span><br></pre></td></tr></table></figure>
+<p>安装过程会出现几个问题，一般都是选择继续安装，有几个问题比较特别，这里提一下</p>
+<ol>
+<li>Install NVIDIA’s 32-bit compatibility libraries? 是否要安装 32 位的库，如果是 64 位的电脑就没必要装</li>
+<li>Would you like to run the nvidia-xconfig utility to automatically update your X configuration file so that the NVIDIA X driver will be used when you restart X? Any pre-existing X configuration file will be backed up. 当安装了NVIDIA显卡驱动后，系统询问是否要自动配置X窗口系统来使用NVIDIA驱动，很多都建议是 No，虽然选择 Yes 会做备份，但是有时候会出现一些奇怪的问题。但是如果已经装好了选择了 Yes，出现了问题想要重新装显卡驱动的，可以看看这篇文章 <a target="_blank" rel="noopener" href="https://blog.csdn.net/Dy1211186431/article/details/135926295">https://blog.csdn.net/Dy1211186431/article/details/135926295</a></li>
+</ol>
+<h3 id="安装之后掉显卡的问题">安装之后掉显卡的问题</h3>
+<p>安装显卡之后，如果内核更新，会导致掉显卡，所以就直接禁用内核更新，关于内核的指令如下：</p>
+<ol>
+<li>查看所有内核 <code>dpkg --get-selections |grep linux-image</code></li>
+<li>禁用内核更新 <code>sudo apt-mark hold linux-image-generic linux-headers-generic</code></li>
+<li>取消禁止内核更新 <code>sudo apt-mark unhold linux-image-generic linux-headers-generic</code></li>
+</ol>
+<p>另外，我发现ubuntu20.04掉内核就很抽象，内核更新之后，电脑的 BIOS 启动项中的安全启动被打开了，而且后续安装 NVIDIA 显卡也需要在 BIOS 启动项中的安全启动关掉，但是一关掉 BIOS 中的安全启动之后，启动 Ubuntu20.04 之后显卡就又好了，只能说有点怪</p>
+<h3 id="小结">小结</h3>
+<p>这种安装驱动的方法，不知道能不能适用于所有人，有些是在<strong>软件与更新</strong>中直接安装推荐版本的显卡驱动的，但是我之前使用的时候经常出问题，而且也不支持 HDMI 外接额外的显示器，显卡驱动也容易掉。至少对于我来说，利用这种方法之后，显卡驱动就没再出现过什么问题了，对于外接屏幕也适配的很好。我的电脑是惠普的，据说联想的电脑安装显卡驱动挺难搞的，如果没用过这种方法，可以试试。如果出问题了，就在选择进入哪个系统的界面中进入 ubuntu recovery，将系统回退一下即可。</p>
+<h2 id="中文输入法">中文输入法</h2>
+<h3 id="ibus">ibus</h3>
+<p>在 ubuntu 中，默认是使用英文输入法的，要想搜索什么东西，都很不方便</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ibus ibus-pinyin</span><br></pre></td></tr></table></figure>
+<p>启动 ibus 守护进程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ibus-daemon -drx</span><br></pre></td></tr></table></figure>
+<p>在系统设置中，找到“区域和语言”设置，选择“输入法”标签，然后添加 IBus 作为输入源。为语言的 input source 添加 chinese intelligent pinyin。之后利用指令 <code>ibus-setup</code> 打开 ibus 的配置文件，修改 input-Method ，为其添加 intelligent pinyin。需要注意的是，这是智能拼音，其他的不能正常拼音打字。有时候好像就没有 <code>intelligent pinyin</code> 这个选项，这个还挺奇怪的，不过后面都没怎么遇到过了，实在不行试试重启</p>
+<h3 id="搜狗输入法">搜狗输入法</h3>
+<p>实际上使用过后，发现 ibus 确实很难用，主要是它有时候被我无意中将符号切换成英文的了，查找很久也没解决，另外就是 ibus 的提示词非常离谱，打字就很麻烦，几乎全程都是在找字，所以选择使用 搜狗输入法。直接按照官方教程安装即可，链接如下：</p>
+<p><a target="_blank" rel="noopener" href="https://shurufa.sogou.com/linux/guide">搜狗输入法官网</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://seashore.top/Blog_ButterFly/">落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://luo25177.github.io/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/">https://luo25177.github.io/2025/09/30/进入ubuntu之后必做的配置/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Luo25177.github.io" target="_blank">LuosBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Blog_ButterFly/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Blog_ButterFly/2025/10/23/webots-ros-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F/" title="webots+ros 机器人仿真"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151426141.png" onerror="onerror=null;src='/Blog_ButterFly/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">webots+ros 机器人仿真</div></div></a></div><div class="next-post pull-right"><a href="/Blog_ButterFly/2025/07/30/%E7%8A%B6%E6%80%81%E4%BC%B0%E8%AE%A1%E5%99%A8/" title="状态估计器"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/1753889005724.png" onerror="onerror=null;src='/Blog_ButterFly/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">状态估计器</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Blog_ButterFly/2024/03/19/ubuntu%E6%8C%87%E4%BB%A4/" title="ubuntu指令"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">ubuntu指令</div></div></a></div><div><a href="/Blog_ButterFly/2024/09/23/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash/" title="Linux系统配置clash"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/20240923003.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-23</div><div class="title">Linux系统配置clash</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Blog_ButterFly/img/avatar.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">落</div><div class="author-info__description">茶凉言尽，月上柳梢</div></div><div class="card-info-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">117</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Luo25177"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Luo25177" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:beloved25177@126.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text">安装显卡驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E9%A9%B1%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text">查找驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%90%88%E9%80%82%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text">查看合适的版本号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%81%E7%94%A8-nouveau"><span class="toc-number">1.3.</span> <span class="toc-text">禁用 nouveau</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B9%8B%E5%90%8E%E6%8E%89%E6%98%BE%E5%8D%A1%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">安装之后掉显卡的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">中文输入法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ibus"><span class="toc-number">2.1.</span> <span class="toc-text">ibus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">搜狗输入法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/10/29/Clion-AT32-%E9%85%8D%E7%BD%AE/" title="Clion+AT32 配置"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Clion+AT32 配置"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/10/29/Clion-AT32-%E9%85%8D%E7%BD%AE/" title="Clion+AT32 配置">Clion+AT32 配置</a><time datetime="2025-10-29T11:39:50.000Z" title="发表于 2025-10-29 19:39:50">2025-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/10/23/webots-ros-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F/" title="webots+ros 机器人仿真"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151426141.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="webots+ros 机器人仿真"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/10/23/webots-ros-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F/" title="webots+ros 机器人仿真">webots+ros 机器人仿真</a><time datetime="2025-10-23T11:37:27.000Z" title="发表于 2025-10-23 19:37:27">2025-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/" title="进入ubuntu之后必做的配置"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="进入ubuntu之后必做的配置"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/" title="进入ubuntu之后必做的配置">进入ubuntu之后必做的配置</a><time datetime="2025-09-29T17:07:09.000Z" title="发表于 2025-09-30 01:07:09">2025-09-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/07/30/%E7%8A%B6%E6%80%81%E4%BC%B0%E8%AE%A1%E5%99%A8/" title="状态估计器"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/1753889005724.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="状态估计器"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/07/30/%E7%8A%B6%E6%80%81%E4%BC%B0%E8%AE%A1%E5%99%A8/" title="状态估计器">状态估计器</a><time datetime="2025-07-30T13:31:29.000Z" title="发表于 2025-07-30 21:31:29">2025-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/07/30/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7%E5%92%8C%E5%8F%AF%E4%BC%B0%E8%AE%A1%E6%80%A7/" title="系统的可观测性和可估计性"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/1753889317195.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="系统的可观测性和可估计性"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/07/30/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7%E5%92%8C%E5%8F%AF%E4%BC%B0%E8%AE%A1%E6%80%A7/" title="系统的可观测性和可估计性">系统的可观测性和可估计性</a><time datetime="2025-07-30T13:26:21.000Z" title="发表于 2025-07-30 21:26:21">2025-07-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: flase"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 落</div><div class="framework_runtime"><a></a></div><div class="framework-info"><img src="https://gcore.jsdelivr.net/gh/CNhuazhu/TuChuang4/blog/备案图标.png">
+<a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备2024056598号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Blog_ButterFly/js/utils.js?v=4.13.0"></script><script src="/Blog_ButterFly/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script><script src="/Blog_ButterFly/js/buttom_show.js"></script><script src="/Blog_ButterFly/js/sakura.js"></script><script src="/Blog_ButterFly/js/forbiden.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/Blog_ButterFly/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
