@@ -182,65 +182,48 @@
 </script>
 
 
-<div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog_ButterFly/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">121</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">117</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg')"><nav id="nav"><span id="blog-info"><a href="/Blog_ButterFly/" title="LuosBlog"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">stm32学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-26T02:32:57.000Z" title="发表于 2024-03-26 10:32:57">2024-03-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-02T11:32:09.336Z" title="更新于 2025-04-02 19:32:09">2025-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Blog_ButterFly/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="stm32学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg)"></div><article class="post-content" id="article-container"><h2 id="stm32f4内部的flash">stm32f4内部的flash</h2>
-<p>stm32芯片内部有一个flash存储器，主要用于存储编译之后烧录进来的代码，由于flash存储器的内容在掉电之后不会丢失，芯片重新上电复位之后内核可以从内部flash中加载代码并运行。</p>
+<div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog_ButterFly/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">121</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">117</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg')"><nav id="nav"><span id="blog-info"><a href="/Blog_ButterFly/" title="LuosBlog"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/../"><i class="fa-fw fas fa-heart"></i><span> 引导</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Blog_ButterFly/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Blog_ButterFly/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Blog_ButterFly/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">stm32学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-26T02:32:57.000Z" title="发表于 2024-03-26 10:32:57">2024-03-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-02T11:32:09.336Z" title="更新于 2025-04-02 19:32:09">2025-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/Blog_ButterFly/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="stm32学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg)"></div><article class="post-content" id="article-container"><h2 id="stm32f4内部的flash"><a href="#stm32f4内部的flash" class="headerlink" title="stm32f4内部的flash"></a>stm32f4内部的flash</h2><p>stm32芯片内部有一个flash存储器，主要用于存储编译之后烧录进来的代码，由于flash存储器的内容在掉电之后不会丢失，芯片重新上电复位之后内核可以从内部flash中加载代码并运行。</p>
 <p>除了使用外部的工具（如下载器）读写内部FLASH外，STM32F4芯片在运行的时候，也能对自身的内部FLASH进行读写，因此，若内部FLASH存储了应用程序后还有剩余空间，我们可以把它像外部SPI-FLASH那样利用起来，存储一些程序运行时产生的需要掉电保存的数据。</p>
 <p>由于访问内部FLASH比外部SPI-FLASH的速度快的多，所以在紧急状态下常常会使用内部FLASH存储关键记录；为了防止应用程序被抄袭，有的应用会禁止读写内部FLASH中的内容，或者在第一次运行时计算机机密信息并记录到某些区域，然后删除自身的部分加密代码，这些都涉及到内部FLASH的操作。</p>
 <p>芯片内部存储的分区</p>
-<h3 id="主存储器">主存储器</h3>
+<h3 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h3><ul>
+<li>介绍芯片时提到的flash的内存的大小都是指主存储器的大小，用于存放代码和数据常量（例如const类型的数据）。</li>
+<li>主存储器分为<strong>256</strong>页，每页大小<strong>2KB</strong>，一共512KB。这个分页就是FLASH的存储扇区，与其他的FLASH一样，写入数据前要先按照页就是扇区进行擦除。</li>
+<li>stm32f4的主存储器分为4个 16KB 扇区、1个 64KB 扇区和 7个 128KB 扇区</li>
+<li><p>stm32的型号：STM32F4ZG</p>
 <ul>
-<li>
-<p>介绍芯片时提到的flash的内存的大小都是指主存储器的大小，用于存放代码和数据常量（例如const类型的数据）。</p>
-</li>
-<li>
-<p>主存储器分为<strong>256</strong>页，每页大小<strong>2KB</strong>，一共512KB。这个分页就是FLASH的存储扇区，与其他的FLASH一样，写入数据前要先按照页就是扇区进行擦除。</p>
-</li>
-<li>
-<p>stm32f4的主存储器分为4个 16KB 扇区、1个 64KB 扇区和 7个 128KB 扇区</p>
-</li>
-<li>
-<p>stm32的型号：STM32F4ZG</p>
-<ul>
-<li>
-<p>G代表FLASH的大小</p>
-<p>4表示16KB；       6表示32KB；      8表示64KB；      B表示128KB</p>
-<p>C表示256KB；    E表示512KB；    F表示768KB；    <strong>G表示1024KB</strong></p>
+<li><p>G代表FLASH的大小</p>
+<p>4表示16KB；       6表示32KB；      8表示64KB；      B表示128KB</p>
+<p>C表示256KB；    E表示512KB；    F表示768KB；    <strong>G表示1024KB</strong></p>
 </li>
 </ul>
 </li>
-<li>
-<p>闪存存储器接口寄存器</p>
+<li><p>闪存存储器接口寄存器</p>
 <ul>
 <li>用于控制闪存读写，是整个闪存模块的控制机构</li>
 <li>在执行闪存写操作时，任何对闪存的读操作都是锁住总线，在写操作完成后，读操作才能正确进行；<strong>也就是说在进行写或者擦除操作时，不能进行数据或者代码的读取操作</strong>。</li>
 </ul>
 </li>
-<li>
-<p>内部FLASH写入过程</p>
+<li><p>内部FLASH写入过程</p>
 <ol>
-<li>解锁<br>
-由于内部FLASH空间主要存储的是应用程序。是非常关键的数据，为了防止误操作修改了这些内容，芯片复位后默认会给 FLASH 上锁，这个时候不再允许设置 FLASH 的控制寄存器，同时也不能修改 FLASH 中的内容。</li>
-</ol>
+<li><p>解锁<br>由于内部FLASH空间主要存储的是应用程序。是非常关键的数据，为了防止误操作修改了这些内容，芯片复位后默认会给 FLASH 上锁，这个时候不再允许设置 FLASH 的控制寄存器，同时也不能修改 FLASH 中的内容。</p>
 <p>所以对 FLASH 写入程序之前，需要先对其进行解锁操作。</p>
 <ul>
 <li>往 FLASH 密钥寄存器 FLASH_KEYR 中写入 KEY1=0x45670123</li>
 <li>再往 FLASH 密钥寄存器 FLASH_KEYR 中写入 KEY2=0xCDEF89AB</li>
 </ul>
-<ol start="2">
-<li>擦除扇区</li>
-</ol>
+</li>
+<li><p>擦除扇区</p>
 <p>在写入新的数据前，需要先擦除存储区域，STM32提供了<strong>扇区擦除指令</strong>和 <strong>整个FLASH擦除——批量擦除</strong>的指令，批量擦除指令仅针对主存储区。</p>
 <p><strong>扇区擦除的过程</strong></p>
 <ul>
 <li>检查FLASH_SR状态寄存器的 “忙碌寄存器BSY” ，以确认当前未执行任何FLASH操作</li>
 <li>在FLASH_CR寄存器中，将 “激活页擦除寄存器位PER” 置1</li>
-<li>用FLASH_AR寄存器选择要擦除的页<br>
-将FLASH_CR控制寄存器中的 “开始擦除寄存器位STRT” 置1，开始擦除</li>
+<li>用FLASH_AR寄存器选择要擦除的页<br>将FLASH_CR控制寄存器中的 “开始擦除寄存器位STRT” 置1，开始擦除</li>
 <li>等待BSY位被清零，表示擦除完成</li>
 </ul>
-<ol start="3">
-<li>写入数据</li>
-</ol>
+</li>
+<li><p>写入数据</p>
 <p>擦除完毕后即可写入数据，写入数据的过程并不是仅仅使用指针指向地址赋值，赋值前还需要配置一系列的寄存器</p>
 <ul>
 <li>检查FLASH_SR状态寄存器中的BSY位，以确认当前未执行任何其他的内部FLASH操作</li>
@@ -248,44 +231,38 @@
 <li>向指定的FLASH存储器地址执行数据写入操作，每次只能以16位的方式写入</li>
 <li>等待BSY位被清零时，表示写入成功</li>
 </ul>
-<ol start="4">
-<li>查看工程的空间分布</li>
-</ol>
+</li>
+<li><p>查看工程的空间分布</p>
 <p>由于内部FLASH本身存储有程序数据，若不是有意删除某段程序代码，一般不应该修改程序空间的内容，所以在使用内部FLASH存储其他数据前需要了解哪一些空间已经写入了程序代码，存储了程序代码的扇区都不应做任何的修改。通过查询应用程序编译时产生的 “*.map” 后缀文件，可以了解程序存储到了哪些区域。</p>
+</li>
+</ol>
 </li>
 </ul>
 <ol>
-<li>
-<p><strong>系统存储器</strong></p>
-<p>系统存储器是STM32开发板出厂之前就已经使用的一块区域，用户是无法访问系统存储区的，主要是做串口下载程序的支持，以及USB、CAN等ISP烧录功能。（系统存储器主要是用来存放STM32F4的bootloader代码，此代码是出厂的时候就固化在STM32F4里面的，专门来给主存储器下载代码的）</p>
+<li><p><strong>系统存储器</strong></p>
+<p> 系统存储器是STM32开发板出厂之前就已经使用的一块区域，用户是无法访问系统存储区的，主要是做串口下载程序的支持，以及USB、CAN等ISP烧录功能。（系统存储器主要是用来存放STM32F4的bootloader代码，此代码是出厂的时候就固化在STM32F4里面的，专门来给主存储器下载代码的）</p>
 </li>
-<li>
-<p><strong>OTP区域</strong></p>
-<p><strong>一次性可编程区域</strong>，共528字节，被分成两部分，前面512个字节（32字节为1块，分成16块），可以用来存储一些用户数据（一次性的，写完一次，永远不可以擦除）后面16个字节，用于锁定对应块。</p>
+<li><p><strong>OTP区域</strong></p>
+<p> <strong>一次性可编程区域</strong>，共528字节，被分成两部分，前面512个字节（32字节为1块，分成16块），可以用来存储一些用户数据（一次性的，写完一次，永远不可以擦除）后面16个字节，用于锁定对应块。</p>
 </li>
-<li>
-<p><strong>选项字节区域</strong></p>
-<p>选项字节区域是用来配置FLASH的读写保护、待机/停机、软件/硬件看门狗功能。可以通过修改FLASH的选项控制<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%AF%84%E5%AD%98%E5%99%A8&amp;spm=1001.2101.3001.7020">寄存器</a>进行修改。</p>
+<li><p><strong>选项字节区域</strong></p>
+<p> 选项字节区域是用来配置FLASH的读写保护、待机/停机、软件/硬件看门狗功能。可以通过修改FLASH的选项控制<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%AF%84%E5%AD%98%E5%99%A8&amp;spm=1001.2101.3001.7020">寄存器</a>进行修改。</p>
 </li>
 </ol>
-<h2 id="鼎新图蓝牙使用">鼎新图蓝牙使用</h2>
-<ol>
+<h2 id="鼎新图蓝牙使用"><a href="#鼎新图蓝牙使用" class="headerlink" title="鼎新图蓝牙使用"></a>鼎新图蓝牙使用</h2><ol>
 <li>波特率，置低波特率为9600，置高为115200，其他波特率值只能用AT设置</li>
 <li>密码，置低密码方式1=8888，置高默认密码0000</li>
 <li>主从模式，置低为从设备，置高为主设备</li>
 <li>距离class级别切换，置低class1设备，置高为class2设备</li>
 <li>拨码有效，置低pio按键无效，置高有效</li>
-<li>清零，置高保持5秒再置低</li>
-</ol>
-<ul>
+<li>清零，置高保持5秒再置低<ul>
 <li>数据模式置高5秒再复位-启动清零=模块做清楚地址码并重新搜索工作。</li>
 <li>AT模式置高5秒再复位-启动清零+恢复=模块做彻底清零并恢复到出厂设置，并重新启动。</li>
 </ul>
-<ol start="7">
+</li>
 <li>主机切换连接至从机2，至低-时为当前从机，至高+为切换至另一个</li>
 <li>AT/数据模式切换，置低数据模式，AT无效，置高AT状态，红灯亮起</li>
 </ol>
-<p>绿灯常亮为成功配对，若要清零，把5或8，和6一起置高，等五秒再置低<br>
-<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=2013.1.0.0.295235c1bQOm52&amp;id=35050036589&amp;qq-pf-to=pcqq.c2c">淘宝网站</a></p>
+<p>绿灯常亮为成功配对，若要清零，把5或8，和6一起置高，等五秒再置低<br><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=2013.1.0.0.295235c1bQOm52&amp;id=35050036589&amp;qq-pf-to=pcqq.c2c">淘宝网站</a></p>
 </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://seashore.top/Blog_ButterFly/">落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://luo25177.github.io/2024/03/26/stm32%E5%AD%A6%E4%B9%A0/">https://luo25177.github.io/2024/03/26/stm32学习/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Luo25177.github.io" target="_blank">LuosBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Blog_ButterFly/tags/stm32f4/">stm32f4</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Blog_ButterFly/2024/03/29/imu%E6%BB%A4%E6%B3%A2/" title="IMU滤波"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151419689.png" onerror="onerror=null;src='/Blog_ButterFly/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">IMU滤波</div></div></a></div><div class="next-post pull-right"><a href="/Blog_ButterFly/2024/03/26/%E8%BD%AE%E5%BC%8F%E5%BA%95%E7%9B%98%E8%A7%A3%E7%AE%97/" title="轮式底盘解算"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151423202.jpg" onerror="onerror=null;src='/Blog_ButterFly/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">轮式底盘解算</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Blog_ButterFly/2024/03/19/stm32-ucos%E4%BD%BF%E7%94%A8/" title="stm32-ucos使用"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">stm32-ucos使用</div></div></a></div><div><a href="/Blog_ButterFly/2024/08/16/GPIO%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/" title="GPIO八种工作模式"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-16</div><div class="title">GPIO八种工作模式</div></div></a></div><div><a href="/Blog_ButterFly/2024/08/16/STM32CubeMX%E5%85%A5%E9%97%A8/" title="STM32CubeMX入门"><img class="cover" src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-16</div><div class="title">STM32CubeMX入门</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Blog_ButterFly/img/avatar.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">落</div><div class="author-info__description">茶凉言尽，月上柳梢</div></div><div class="card-info-data site-data is-center"><a href="/Blog_ButterFly/archives/"><div class="headline">文章</div><div class="length-num">121</div></a><a href="/Blog_ButterFly/tags/"><div class="headline">标签</div><div class="length-num">117</div></a><a href="/Blog_ButterFly/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Luo25177"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Luo25177" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:beloved25177@126.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#stm32f4%E5%86%85%E9%83%A8%E7%9A%84flash"><span class="toc-number">1.</span> <span class="toc-text">stm32f4内部的flash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">主存储器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BC%8E%E6%96%B0%E5%9B%BE%E8%93%9D%E7%89%99%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">鼎新图蓝牙使用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/11/16/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" title="傅里叶变换"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151504776.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="傅里叶变换"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/11/16/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" title="傅里叶变换">傅里叶变换</a><time datetime="2025-11-16T11:30:10.000Z" title="发表于 2025-11-16 19:30:10">2025-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/10/29/Clion-AT32-%E9%85%8D%E7%BD%AE/" title="Clion+AT32 配置"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151420699.jpg" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="Clion+AT32 配置"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/10/29/Clion-AT32-%E9%85%8D%E7%BD%AE/" title="Clion+AT32 配置">Clion+AT32 配置</a><time datetime="2025-10-29T11:39:50.000Z" title="发表于 2025-10-29 19:39:50">2025-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/10/23/webots-ros-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F/" title="webots+ros 机器人仿真"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151426141.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="webots+ros 机器人仿真"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/10/23/webots-ros-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F/" title="webots+ros 机器人仿真">webots+ros 机器人仿真</a><time datetime="2025-10-23T11:37:27.000Z" title="发表于 2025-10-23 19:37:27">2025-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/" title="进入ubuntu之后必做的配置"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/202404151528131.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="进入ubuntu之后必做的配置"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/09/30/%E8%BF%9B%E5%85%A5ubuntu%E4%B9%8B%E5%90%8E%E5%BF%85%E5%81%9A%E7%9A%84%E9%85%8D%E7%BD%AE/" title="进入ubuntu之后必做的配置">进入ubuntu之后必做的配置</a><time datetime="2025-09-29T17:07:09.000Z" title="发表于 2025-09-30 01:07:09">2025-09-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Blog_ButterFly/2025/07/30/%E7%8A%B6%E6%80%81%E4%BC%B0%E8%AE%A1%E5%99%A8/" title="状态估计器"><img src="https://cdn.jsdelivr.net/gh/Luo25177/BlogPic@master/ButterFlyPic/1753889005724.png" onerror="this.onerror=null;this.src='/Blog_ButterFly/img/404.jpg'" alt="状态估计器"/></a><div class="content"><a class="title" href="/Blog_ButterFly/2025/07/30/%E7%8A%B6%E6%80%81%E4%BC%B0%E8%AE%A1%E5%99%A8/" title="状态估计器">状态估计器</a><time datetime="2025-07-30T13:31:29.000Z" title="发表于 2025-07-30 21:31:29">2025-07-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: flase"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 落</div><div class="framework_runtime"><a></a></div><div class="framework-info"><img src="https://gcore.jsdelivr.net/gh/CNhuazhu/TuChuang4/blog/备案图标.png">
 <a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备2024056598号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Blog_ButterFly/js/utils.js?v=4.13.0"></script><script src="/Blog_ButterFly/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script><script src="/Blog_ButterFly/js/buttom_show.js"></script><script src="/Blog_ButterFly/js/sakura.js"></script><script src="/Blog_ButterFly/js/forbiden.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/Blog_ButterFly/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
